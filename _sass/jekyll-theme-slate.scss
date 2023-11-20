@@ -310,10 +310,11 @@ Full-Width Styles
 
 #project_title {
   margin: 10px auto;
+  text-align: center;
   color: #fff;
   font-size: 130px;
   white-space: nowrap;
-  text-align: center;
+ // text-align: center;
   font-weight: 700;
   text-shadow: #111 0px 0px 10px;
 }
