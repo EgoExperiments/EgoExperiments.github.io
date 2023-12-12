@@ -1,0 +1,239 @@
+body {
+    background-color: #404040;
+    height: 2635px;
+}
+    #S0 {
+        color: #FFF;
+        text-align: center;
+        font-family: Pirulen ;
+        font-size: 98px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 38.4px;
+        text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.65);
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #S1 {
+        color: #FFF;
+        text-align: center;
+        font-family: Pirulen ;
+        font-size: 98px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 14.4px;
+        text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.65);
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+        #S2 {
+            color: #FFF;
+            text-align: center;
+            font-family: Neuropolitical;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 5.25px;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            filter:blur(1px)
+        }
+
+            #S3 {
+                color: #FFF;
+            text-align: center;
+            font-family: Neuropolitical;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 5.25px;
+            padding: 0;
+            margin: 0;
+            padding-top: 138px;
+            }
+
+            .box1 {
+                display: block;
+                position: relative;
+                width: 297px;
+                height: 40px;
+                border-radius: 35px 35px 45px 45px;
+                background: #343434;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.60);
+                margin: 127px auto 0px auto;
+                color: #FFF;
+                text-align: center;
+                font-family: Neuropolitical;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 5.25px;
+                padding: 11px 25px;
+                box-sizing: border-box;
+                
+            }
+
+            .box2 {
+                display: block;
+                position: relative;
+                width: 1267px;
+                height: 816px;
+                margin: 15px auto 0px auto;
+                border-radius: 35px 35px 35px 35px;
+                background: #343434;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+                padding: 30px 25px;
+       
+    
+            }
+            #solacedemo {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                width: 469px;
+                margin: 0px auto 0px auto;
+                border-radius: 35px 35px 35px 35px;
+                padding: 0px;
+            }
+                
+
+                #solaceecho {
+                    display: flex;
+                    justify-content: left;
+                    position: relative;
+                    width: 469px;
+                    margin: 141px 84px 0px 85px;
+                    border-radius: 35px 35px 35px 35px;
+                    padding: 0px;
+                    filter: blur(5px);
+                }
+
+                #solacehope {
+                    display: flex;
+                    justify-content: right;
+                    position: relative;
+                    width: 469px;
+                    margin: -255px 84px 113px 720px;
+                    border-radius: 35px 35px 35px 35px;
+                    padding: 0;
+                    filter:blur(5px);
+
+                }
+
+            
+
+            .box3 {
+                display: block;
+                position: relative;
+                width: 297px;
+                height: 40px;
+                border-radius: 35px 35px 45px 45px;
+                background: #343434;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.60);
+                margin: 68px auto 0px auto;
+
+                color: #FFF;
+                text-align: center;
+                font-family: Neuropolitical;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 5.25px;
+                padding: 15px 18px;
+                box-sizing: border-box;
+            }
+
+            .box4 {
+                display: block;
+                position: relative;
+                width: 1204px;
+                height: 580px;
+                border-radius: 35px 35px 45px 45px;
+                background: #343434;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+                margin: 24px auto 0px auto;
+
+                color: #FFF;
+                text-align: center;
+                font-family: Pirulen;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 60px;
+                letter-spacing: 5.25px;
+                padding: 15px 18px;
+                box-sizing: border-box;
+            }
+
+            .box5 {
+                display: block;
+                position: relative;
+                width: 328px;
+                height: 20px;
+                border-radius: 35px 35px 45px 45px;
+                background: #343434;
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.60);
+                margin: 188px auto 0px auto;
+                text-align: center;
+                color: #FFF;
+                font-family: Neuropolitical;
+                font-size: 15px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 5.25px;
+                padding: 11px 17px 11px 17px;
+                box-sizing: content-box;
+                white-space: nowrap;
+              
+            }
+
+           #X1 {
+                color: #FFF;
+                font-size: 27px;
+                font-family: Neuropolitical;
+
+           }
+
+           #X2 {
+            color: #FFF;
+            font-size: 27px;
+            font-family: Neuropolitical;
+
+            }  
+            
+            #X3 {
+                color: #FFF;
+                font-size: 27px;
+                font-family: Neuropolitical;
+
+           }
+
+           #X4 { 
+            color: #FFF;
+            font-size: 27px;
+            font-family: Neuropolitical;
+
+             }
+
+             #X5 {
+                color: #FFF;
+                font-size: 18px;
+                font-family: Pirulen;
+                letter-spacing: 7px;
+             }
+
+             
+        
+        
