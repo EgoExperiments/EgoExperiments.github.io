@@ -13,6 +13,33 @@
     }
  }
 
+@media only screen and (max-device-width:768px){
+
+body.modal-open {
+// block scroll for mobile;
+// causes underlying page to jump to top;
+// prevents scrolling on all screens
+overflow: hidden;
+position: fixed;
+}
+}
+
+body.viewport-lg {
+// block scroll for desktop;
+// will not jump to top;
+// will not prevent scroll on mobile
+position: absolute; 
+}
+
+body {  
+overflow-x: hidden;
+overflow-y: scroll !important;
+}
+
+
+
+
+
 @font-face {
     font-family: Oldtimer;
     src: url(Oldtimer-GOPpg.ttf);
