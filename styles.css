@@ -8,18 +8,17 @@
 }
 
 html{
-  height:100%;
+  width:100%;
   
 }
 
 
 body {
-  min-height: 100%;
   position: fixed;
   overflow-y: scroll;
   padding: 0;
   margin: 0;
-  width: 100%;
+  min-width: 100%;
 }
 
 
