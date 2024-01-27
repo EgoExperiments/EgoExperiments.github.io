@@ -1,6 +1,7 @@
 /* New way of prioritization */
 
 #bootstrap-overrides {
+    min-height: 100%;
     background-color: #101010;
     overflow-y: scroll;
     overflow-x: hidden;
