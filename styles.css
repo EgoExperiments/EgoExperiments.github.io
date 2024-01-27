@@ -28,22 +28,6 @@ body {
     }
  }
 
-@media only screen and (max-device-width:768px){
-
-body.modal-open {
-overflow: hidden;
-position: fixed;
-}
-}
-
-body.viewport-lg {
-position: absolute; 
-}
-
-body {  
-overflow-x: hidden;
-overflow-y: scroll !important;
-}
 
 
 
