@@ -8,8 +8,9 @@
 }
 
 html{
-  width:100%;
   overflow-y: scroll;
+  padding: 0;
+  margin: 0;
 }
 
 
