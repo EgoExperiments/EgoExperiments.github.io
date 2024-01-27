@@ -1,80 +1,187 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>EGO EXPERIMENTS</title>
+<!doctype html>
+<html lang="en">
+  <head>
 
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://kit.fontawesome.com/33bce87e80.js" crossorigin="anonymous"></script>
-    </head>
+    <link rel="styles"  href="styles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <body>
-            <h1 id="S0">EGO</h1>
-            <h1 id="S1">EXPERIMENTS</h1>
+     <title>Bootstrap demo</title>
 
-            <h2 id="S2">Ego Experiments Studios Ltd.</h2>
+    <!--Include Bootstrap-->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="styles.css">
 
-                        <div class="box1">Our Catalog:</div>
-                        
+  </head>
 
-                        <div class="box2">
-                                <img id="solacedemo" src="images/Solace-Demo.png">
-                                <img id="solaceecho" src="images/Solace Echo.png">
-                                <img id="solacehope" src="images/Solace Hope.png">
-                        </div>
+  <body id="bootstrap-overrides">
+    <!--Banner-->
+    <div id="TitleBackround">
+        
+          <h1 class="animate__animated animate__fadeIn" id="title">EGO EXPERIMENTS</h1>
+        </h1>
 
-                        <div class="box3">About Our Studio:</div>
+          <div class="col-lg-6 mx-auto"> 
+            <!--<div class="d-grid gap-2 d-sm-flex justify-content-left">
+              <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">About</button>
+              <button type="button" class="btn btn-outline-light btn-lg px-4">Kickstarter</button>
+            </div>-->
+          </div>
+        </div>
+      </div>
+      <h1 class="animate__animated animate__shakeX animate__repeat-3 animate__fadeOut"id="Construction">UNDER CONSTRUCTION</h1>
+      <div id="Divider"></div>
 
-                        <div class="box4">Ego Experiments is an indie game studio with a focus on storytelling through the lens of game development. The two founders started developing games in middle school. It wasn't until their combined love of writing and storytelling met their passion for game development that Ego Experiments was born. We strive to channel the complexities of the neurodivergent mind into not just storytelling, but game design as well, opening way to intricate, intractable stories.
-                        </div>
+      <!--Solace Demo About-->
+      <div id="Solace-Demo"
+      <div class="row">
+      <div class="col">
+        <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 90%; height: 100%; border-radius: 21px 21px 21px 21px;">
+          <img id="Solace_Demo_Image" src="images/SolaceLogo.png">
+        </div>
+      </div>
+        <div class="col-md-auto">
+          <!--Variable width content-->
+        </div>
+        <div class="col">
+        <div class="body" style="width: 90%; height: 450px; border-radius: 21px 21px 21px 21px; margin:auto;">
+          <div id="justify-content-center">
+            <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner" style="border-radius: 21px;">
+                <div class="carousel-item active">
+                    <svg class="bd-placeholder-img" width="100%" height="450px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+                    <div class="container">
+                    <div class="carousel-caption text-start">
+                        <h1>Example headline.</h1>
+                        <img id="Solace_Demo_Image" src="images/SolaceLogo.png">
+                        <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                    </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="450px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+                    <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Another example headline.</h1>
+                        <p>Some representative placeholder content for the second slide of the carousel.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                    </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="450px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+                    <div class="container">
+                    <div class="carousel-caption text-end">
+                        <h1>One more for good measure.</h1>
+                        <p>Some representative placeholder content for the third slide of this carousel.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+          </div>
+          </div>
+        </div>
+        </div>
+      </div>
 
-                        <div class="box5">Follow Our Progress:</div>
+      <div id="Divider"></div>
+      <div id="More-Games">More Games</div>
+    
+      <div id="GallaryContainer">
+      
+        
 
-                        <h3 id="X1">@EGOEXPERIMENTS <i class="fa-brands fa-youtube"> </i> </h3>
+      
+      <!--Game Library-->
+      <div id="GallaryBackGround">
+      <div id="Gallary">
+        <div class="row">
+          <div class="col">
+            <div class="bg-body-tertiary shadow-sm mx-auto" style="border-radius: 21px 21px 21px 21px;">
+              <img id="Solace_Demo_Image" src="images/SolaceHopeLogo.png">
+            </div>
+          </div>
+            <div class="col-md-auto">
+              <!--Variable width content-->
+              <div class="row-md-auto">
+                <!--Variable width content-->
+              </div>
+            </div>
+            <div class="col">
+            <div class="bg-body-tertiary shadow-sm mx-auto" style="border-radius: 21px 21px 21px 21px;">
+              <img id="Solace_Demo_Image" src="images/SolaceEchoLogo.png">
+                </div>
+              </div>
+              </div>
+            </div>
+            </div>
+          </div>
 
-                        <h3 id="X2">@EGO.EXPERIMENTS <i class="fa-brands fa-square-instagram"> </i> </h3>
 
-                        <h3 id="X3">@EGOEXPERIMENTS <i class="fa-brands fa-twitter"> </i> </h3>
+<!--
+        <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 21px 21px;">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 90%; height: 100%; border-radius: 21px 21px 21px 21px;">
+                  <div class="container text-center">SolaceHope</div>
+                </div>
+                <div class="container">
+                    <div class="col">
+                      <div class="bg-body-tertiary shadow-sm mx-auto" style="width: 90%; height: 100%; border-radius: 21px 21px 21px 21px;">
+                        <div class="container text-center">SolaceHope</div>
+                      </div>        
+                    </div>
+                </div>   
+              </div>
+            </div>
+          </div>
+        </div> -->
 
-                        <h3 id="X4">@EGOEXPERIMENTSSTUDIOS <i class="fa-brands fa-tiktok"> </i> </h3>
 
-                        <h3 id="X5">EgoExperiments@gmail.com</h4>
+      </div>  
+      
+    
 
-                        
 
 
-                <style>
-                        h1 {
-                                text-align: center;
-                        }
+<!--Footer: Todo Socials-->
+<div id="Footer">
 
-                        h2 {
-                                text-align: center;
-                        }
+  <div class="images">
+    <a href="https://www.instagram.com/ego.experiments/"><img src="images/instagramwhitepixel.png"></a>
+    <a href="https://www.youtube.com/channel/UCSeg3LL6Zk0wiG2BzzLKS0A"><img src="images/YoutubeWhitePixel.png"></a>
+    <a href="https://www.tiktok.com/@ego.experiments"><img src="images/WhiteTiktokPixel.png"></a>
+    <a href="https://twitter.com/EGOEXPERIMENTS"><img src="images/XwhitePix.png"></a>
+    
+    </div>
+</div>
 
-                        h3 {
-                                text-align: center;
-                        }
+  </body>
 
-                        .box1 {
-                                text-align: center;
-                        }
 
-                        .box3 {
-                                text-align: center;
-                        }
+</div>			
 
-                        .box4 {
-                                text-align: center;
-                        }
 
-                        .box5 {
-                                text-align: center;
-                        }
 
-                        
-                        
 
-                </style>
-        </body>
 </html>
+

@@ -1,0 +1,253 @@
+/* New way of prioritization */
+
+#bootstrap-overrides {
+    background-color: #101010;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-size: cover;
+}
+
+@media (max-width: 576px) { 
+    #title {
+        font-size: 29px !important;
+    }
+ }
+
+#title {
+    flex: auto;
+    flex-direction: row;
+    text-align: center;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Oldtimer;
+    font-size: 64px;
+    letter-spacing: 15px;
+    margin-top: auto;
+    
+}
+
+.animate__animated.animate__fadeIn {
+    --animate-duration: 4s;
+}
+
+#Construction{
+    text-align: center;
+    font-family: Tahoma;
+    color: #f4f11a;
+    font-size: 15px;
+}
+
+#TitleBackround{
+    background-color: #1e266a;
+    text-align: center;
+    width: auto;
+    padding: 20px;
+    margin: auto;
+    flex: auto;
+}
+
+#SubTitle {
+    flex: auto;
+    color: #fff;
+    text-align: center;
+    font-family: Oldtimer;
+    font-size: 34px;
+    letter-spacing: 52.92px;
+}
+
+#Solace-Demo {
+    flex: auto;
+    justify-content: auto;
+    padding-bottom: 20px;
+}
+
+
+#Gallary {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+}
+
+#More-Games {
+    position: relative;
+    color: #fff;
+    font-size: 30px;
+    font-family: ISL_Andvari;
+    text-shadow: 0px 0px 19.9px rgba(255, 255, 255, 0.88);
+    margin: 0 auto;
+    text-align: center;
+    padding: 2;
+    flex: auto;
+}
+
+
+
+#myCarousel {
+    height: 100%;
+    flex: auto;
+    justify-content: auto;
+    margin-bottom: 30px;
+}
+
+#justify-content-center {
+    flex: auto;
+    height:auto;
+}
+
+.text-body-secondary {
+    color: #fff; 
+}
+
+
+
+#Divider {
+    height: 65px;
+}
+
+#GallaryContainer {
+    text-align: center;
+    overflow: hidden;
+    
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 45px;
+    padding-top: 45px;
+    justify-content: center;
+
+  
+}
+
+#GallaryBackGround {
+    position: relative;
+    width: auto;
+    flex: auto;
+    border-radius: 50px;
+    background: linear-gradient(97deg, #202020 8.54%, rgba(16, 16, 16, 0.84) 91.14%);
+    box-shadow: 0px 4px 71.2px 0px rgba(0, 0, 0, 0.79) inset, 0px 4px 33.9px 0px rgba(0, 0, 0, 0.34);
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+#Footer {
+    width: auto;
+    text-align: center;
+    background-color: #1e266a;
+    height: auto;
+    flex: auto;  
+}
+
+#Solace_Demo_Image {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 0px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 18.9px 0px rgba(0, 0, 0, 0.53);
+    flex: content;
+}
+
+
+
+
+img {
+    float: center;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.glow-button {
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    background: #5dc6fa;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-button:before {
+    content: '';
+    background: linear-gradient(45deg, #1e266a, #1e266a, #1e266a, #1e266a, #00ffd5, #002bff, #1e266a, #1e266a, #1e266a);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-button:active {
+    color: #5373ca
+}
+
+.glow-button:active:after {
+    background: transparent;
+}
+
+.glow-button:hover:before {
+    opacity: 1;
+}
+
+.glow-button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #7891ff;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+#GlowButton {
+    display: block;
+    text-align: center;
+
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    background: teal;
+    border-radius: 8px;
+    opacity: 0;
+    transform: scale(1.2);
+}
+
+.mx-auto {
+    margin-bottom: 20px;
+}
+
+.row>* {
+    display: block;
+    margin: 10px auto 10px auto;
+    
+}
+
+@media (min-width: 576px) { 
+#SolaceDemoImage {
+        height: 260px !important;
+    }
+}
