@@ -76,7 +76,7 @@ overflow-y: scroll !important;
 #TitleBackround{
     background-color: #1e266a;
     text-align: center;
-    width: auto;
+    width: 100%;
     padding: 20px;
     margin: auto;
     flex: auto;
