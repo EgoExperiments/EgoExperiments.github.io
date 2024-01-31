@@ -1,31 +1,17 @@
 /* New way of prioritization */
 
 #bootstrap-overrides {
-    min-height: 100%;
-    background-color: #101010;
+    background-color: #0b0b0b;
     overflow-y: scroll;
     overflow-x: hidden;
     background-size: cover;
-    padding: 0;
-    margin: 0;
 }
-
-
-
 
 @media (max-width: 576px) { 
     #title {
         font-size: 29px !important;
     }
  }
-
-body{
-    overflow-y: scroll;
-    min-height: 100%;
-}
-
-
-
 
 @font-face {
     font-family: Oldtimer;
@@ -58,12 +44,13 @@ body{
 }
 
 #TitleBackround{
-    background-color: #1e266a;
+    background-color: #0a0a0a;
     text-align: center;
     width: 100%;
     padding: 20px;
     margin: auto;
     flex: auto;
+
 }
 
 #SubTitle {
@@ -85,7 +72,7 @@ body{
 #Gallary {
     text-align: center;
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
 
 }
 
@@ -93,8 +80,7 @@ body{
     position: relative;
     color: #fff;
     font-size: 30px;
-    font-family: ISL_Andvari;
-    text-shadow: 0px 0px 19.9px rgba(255, 255, 255, 0.88);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0 auto;
     text-align: center;
     padding: 2;
@@ -132,7 +118,7 @@ body{
     padding-left: 45px;
     padding-right: 45px;
     padding-bottom: 45px;
-    padding-top: 45px;
+    padding-top: 11px;
     justify-content: center;
 
   
@@ -142,17 +128,21 @@ body{
     position: relative;
     width: auto;
     flex: auto;
-    border-radius: 50px;
-    background: linear-gradient(97deg, #202020 8.54%, rgba(16, 16, 16, 0.84) 91.14%);
+    border-radius: 10px;
+    background-image: url(images/TheFog.PNG);
+    background-position: bottom;
     box-shadow: 0px 4px 71.2px 0px rgba(0, 0, 0, 0.79) inset, 0px 4px 33.9px 0px rgba(0, 0, 0, 0.34);
     padding-left: 45px;
     padding-right: 45px;
+    opacity: 0.2;
 }
+
+
 
 #Footer {
     width: auto;
     text-align: center;
-    background-color: #1e266a;
+    background-color: #0a0a0a;
     height: auto;
     flex: auto;  
 }
@@ -166,7 +156,6 @@ body{
     box-shadow: 0px 4px 18.9px 0px rgba(0, 0, 0, 0.53);
     flex: content;
 }
-
 
 
 
@@ -269,4 +258,22 @@ img {
 #SolaceDemoImage {
         height: 260px !important;
     }
+}
+
+
+#solaceDemoTitle{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    padding: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: bold;
+}
+
+#aboutDemo{
+    color: #fff;
+    font-size: 21px;
+    line-height: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-bottom: 20px;
 }
