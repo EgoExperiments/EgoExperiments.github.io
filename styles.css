@@ -1,29 +1,10 @@
-/* New way of prioritization */
 
-#bootstrap-overrides {
-    background-color: #0b0b0b;
+#bootstrap-overrides{
     overflow-y: scroll;
     overflow-x: hidden;
-    background-size: cover;
-    flex: auto;
+    background-color: #0b0b0b;
+
 }
-
-@media (max-width: 480px) { 
-    #title {
-        font-size: 17px !important;
-    }
- }
-
-@font-face {
-    font-family: Oldtimer;
-    src: url(Oldtimer-GOPpg.ttf);
-}
-
-@font-face {
-    font-family: Franklin Gothic Medium;
-    src: url(Franklin\ Gothic\ Medium\ Regular.ttf);
-}
-
 #title {
     flex: auto;
     flex-direction: row;
@@ -34,116 +15,88 @@
     font-family: Oldtimer;
     font-size: 35px;
     letter-spacing: 9px;
-    margin-top: auto;
+    margin-top: -30px;
     
 }
 
-.animate__animated.animate__fadeIn {
-    --animate-duration: 4s;
+#header{
+    position: fixed;
+    max-width: 100%;
 }
 
-#Construction{
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #f4f11a;
-    font-size: 15px;
-}
+
+
+
 
 #TitleBackround{
     background-color: #0a0a0a;
     text-align: center;
     width: 100%;
-    padding: 20px;
-    margin: auto;
-    flex: auto;
-
-}
-
-#SubTitle {
-    flex: auto;
-    color: #fff;
-    text-align: center;
-    font-family: Oldtimer;
-    font-size: 34px;
-    letter-spacing: 52.92px;
-}
-
-#Solace-Demo {
-    flex: auto;
-    justify-content: auto;
-    padding-bottom: 20px;
-}
-
-
-#Gallary {
-    text-align: center;
-    padding-top: 60px;
     padding-bottom: 30px;
+    margin: -180px 0px -155px 355px;
+    display: flex!important;
+    flex-direction: row;
 
 }
 
-#More-Games {
-    position: relative;
-    color: #fff;
-    font-size: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 0 auto;
-    text-align: center;
-    padding: 2;
-    flex: auto;
+@font-face {
+    font-family: Oldtimer;
+    src: url(Oldtimer-GOPpg.ttf);
+}
+
+@font-face {
+    font-family: X Typewriter;
+    src: url(XTypewriter-Regular.ttf)
 }
 
 
 
-#myCarousel {
+
+.imageContain {
+    width: 100%;
     height: 100%;
-    flex: auto;
-    justify-content: auto;
-    margin-bottom: 30px;
+    display: flex!important;
 }
 
-#justify-content-center {
-    flex: auto;
-    height:auto;
-}
-
-.text-body-secondary {
-    color: #fff; 
-}
-
-
-
-#Divider {
-    height: 65px;
-}
-
-#GallaryContainer {
+#SOLACE {
+    color: rgba(255,255,255,0.20999999344348907);
+    font-family: Oldtimer;
+    font-size: 180px;
+    opacity: 1;
     text-align: center;
-    overflow: hidden;
-    
-    padding-left: 45px;
-    padding-right: 45px;
-    padding-bottom: 45px;
-    padding-top: 11px;
-    justify-content: center;
-
-  
-}
-
-#GallaryBackGround {
     position: relative;
-    width: auto;
-    flex: auto;
-    border-radius: 10px;
-    background-image: url(images/TheFog.PNG);
-    background-position: bottom;
-    box-shadow: 0px 4px 71.2px 0px rgba(0, 0, 0, 0.79) inset, 0px 4px 33.9px 0px rgba(0, 0, 0, 0.34);
-    padding-left: 45px;
-    padding-right: 45px;
-    opacity: 0.2;
+    margin-top: -717px;
+    animation-duration: 3s;
 }
 
+#submark {
+    height: 115px;
+    margin: 0px 0px 0px 0px;
+}
 
+@media (max-width:768px){
+    #submark{
+        height: 50px;
+    }
+}
+
+#menuIcon{
+    height: 68px;
+    padding: 0px 42px 0px 0px;
+    margin-top: 25px;
+}
+
+@media (max-width:768px){
+    #menuIcon{
+        height: 0px;
+    }
+}
+
+@media (max-width:768px){
+    .py-3{
+        height: 52px;
+    }
+}
 
 #Footer {
     width: auto;
@@ -151,145 +104,94 @@
     background-color: #0a0a0a;
     height: auto;
     flex: auto;  
-}
-
-#Solace_Demo_Image {
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    padding: 0px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 18.9px 0px rgba(0, 0, 0, 0.53);
-    flex: content;
-}
-
-
-
-img {
-    float: center;
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-}
-
-.glow-button {
-    width: 150px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #ffffff;
-    background: #5dc6fa;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-}
-
-.glow-button:before {
-    content: '';
-    background: linear-gradient(45deg, #1e266a, #1e266a, #1e266a, #1e266a, #00ffd5, #002bff, #1e266a, #1e266a, #1e266a);
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
-}
-
-.glow-button:active {
-    color: #5373ca
-}
-
-.glow-button:active:after {
-    background: transparent;
-}
-
-.glow-button:hover:before {
-    opacity: 1;
-}
-
-.glow-button:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #7891ff;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-}
-
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-}
-
-#GlowButton {
-    display: block;
-    text-align: center;
-
-}
-
-.square {
-    width: 200px;
-    height: 200px;
-    background: teal;
-    border-radius: 8px;
-    opacity: 0;
-    transform: scale(1.2);
-}
-
-.mx-auto {
-    margin-bottom: 20px;
-}
-
-.row>* {
-    display: block;
-    margin: 10px auto 10px auto;
     
 }
 
-@media (min-width: 576px) { 
-#SolaceDemoImage {
-        height: 260px !important;
+#bannerImg{
+    width: 100%;
+}
+
+#aboutSolace {
+    color: rgba(255,255,255,1);
+    position: relative;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    font-family: X Typewriter;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 1;
+    text-align: center;
+    flex-direction: column;
+    margin: 305px 115px auto 115px;
+    flex: auto;
+    animation-duration: 5s;
+    padding-top: 20px;
+}
+
+@media (max-width:768px){
+    #aboutSolace{
+        font-size: 20px;
+        padding-top: 89px;
+    }
+}
+
+#fog{
+    width: 100%;
+    transform: rotate(-180deg);
+    margin-top: -267px;
+    opacity: 0.18;
+    position: absolute;
+    
+}
+
+@media (max-width:768px){
+    #fog{
+        margin-top: -388px;
     }
 }
 
 
-#solaceDemoTitle{
-    color: #fff;
-    font-size: 30px;
+#demo{
     text-align: center;
-    padding: 15px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-style: bold;
-}
-
-#aboutDemo{
     color: #fff;
-    font-size: 21px;
-    line-height: 30px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding-bottom: 20px;
-    object-fit: contain;
+    font-family: Oldtimer;
+    font-size: 45px;
+    opacity: .5;
+    margin-top: 140px;
 }
 
-#solaceGalleryBackround{
+#Solace_Demo_Image{
+    width: 100%;
+    height: 100%;
+    margin: 60px auto 0px auto;
+    box-shadow: 0px 4px 18.9px 0px rgba(0, 0, 0, 0.53);
+    flex: content;
+}
+
+.aboutDemo {
+    color: rgba(255,255,255,1);
+    position: relative;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    font-family: X Typewriter;
+    font-weight: Regular;
+    font-size: 40px;
+    opacity: 1;
+    text-align: center;
+    flex-direction: column;
+    margin: 0px 215px 120px 215px;
+    flex: auto;
+    animation-duration: 5s;
     display: block;
-    background-image: url(images/TheFog.PNG);
-    padding: 10px;
-    border-radius: 10px;
-    margin: 10px;
-    opacity: 0.2;
+}
+
+#egosub{
+    height: 55px;
+}
+
+.text-body-secondary{
+    color: #fff!important;
+    max-width: 100%;
+}
+
+:root{
+    --bs-border-color: #ba4e11;
 }
