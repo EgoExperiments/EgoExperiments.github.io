@@ -69,6 +69,13 @@
     animation-duration: 3s;
 }
 
+@media (max-width:768px){
+    #SOLACE{
+        font-size: 65px;
+        margin: -195px 0px -253px 0px;
+    }
+}
+
 #submark {
     height: 115px;
     margin: 0px 0px 0px 0px;
@@ -130,7 +137,7 @@
 @media (max-width:768px){
     #aboutSolace{
         font-size: 20px;
-        padding-top: 89px;
+        padding-top: 32px;
     }
 }
 
@@ -145,7 +152,7 @@
 
 @media (max-width:768px){
     #fog{
-        margin-top: -388px;
+        margin-top: -429px;
     }
 }
 
@@ -156,8 +163,16 @@
     font-family: Oldtimer;
     font-size: 45px;
     opacity: .5;
-    margin-top: 140px;
+    margin-top: 243px;
+    margin-bottom: -34px;
 }
+
+@media (max-width:768px){
+    #demo{
+        margin-top: 91px;
+    }
+}
+
 
 #Solace_Demo_Image{
     width: 100%;
@@ -183,6 +198,14 @@
     display: block;
 }
 
+@media (max-width:768px){
+    .aboutDemo{
+        font-size: 20px;
+        padding-top: 15px;
+        margin: 0px 48px 120px 46px;
+    }
+}
+
 #egosub{
     height: 55px;
 }
@@ -195,3 +218,4 @@
 :root{
     --bs-border-color: #ba4e11;
 }
+
