@@ -71,8 +71,8 @@
 
 @media (max-width:768px){
     #SOLACE{
-        font-size: 65px;
-        margin: -195px 0px -253px 0px;
+        font-size: 50px;
+        margin: -150px 0px -253px 0px;
     }
 }
 
@@ -138,6 +138,8 @@
     #aboutSolace{
         font-size: 20px;
         padding-top: 32px;
+        margin: 290px 20px 0px 20px;
+        animation-duration: 6s;
     }
 }
 
@@ -152,7 +154,7 @@
 
 @media (max-width:768px){
     #fog{
-        margin-top: -429px;
+        margin-top: -329px;
     }
 }
 
@@ -202,7 +204,7 @@
     .aboutDemo{
         font-size: 20px;
         padding-top: 15px;
-        margin: 0px 48px 120px 46px;
+        margin: 0px 37px 120px 37px;
     }
 }
 
