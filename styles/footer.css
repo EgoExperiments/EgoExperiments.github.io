@@ -1,0 +1,25 @@
+footer {
+	padding-top: 15%;
+	margin: .5%;
+}
+
+#submark {
+	width: 6%;
+}
+
+
+
+#footers {
+	color: white !important;
+}
+
+.nav-link {
+	color: white;
+}
+
+footer, h3 {
+	font-family: disoriented;
+text-align: center;
+color: white;
+font-size: .6vw;
+}
