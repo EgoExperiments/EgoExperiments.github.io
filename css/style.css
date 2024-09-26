@@ -49,6 +49,11 @@ Primary Color: #E48632;
     src: url('../fonts/Anurati-Regular.otf');
 }
 
+@font-face {
+    font-family: 'Disoriented';
+    src: url('../fonts/Disoriented.ttf');
+}
+
 /* --------------------------- /////////// I. GENERAL /////////// --------------------------- */
 /* -Color- */
 .colored {
