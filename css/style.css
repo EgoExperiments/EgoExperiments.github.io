@@ -481,7 +481,6 @@ button {
     padding: 0;
 }
 .game-card-left img {
-    height: 100%;
     width: 100%;
     min-height: 270px;
 }
