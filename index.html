@@ -1,699 +1,1065 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8TT5DHVQ5S"></script>
-<script>
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-8TT5DHVQ5S"></script>
+        <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-8TT5DHVQ5S');
 </script>
-    <!-- META TAGS -->
-    <meta charset="utf-8">
-    <meta name="author" content="AtypicalThemes">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+        <!-- META TAGS -->
+        <meta charset="utf-8">
+        <meta name="author" content="AtypicalThemes">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <!-- WEBSITE TITLE & DESCRIPTION -->
-    <title>Ego Experiments</title>
-    <meta name="description" content="The best template for game developers and small studios">
-    <meta name="keywords" content="game, gaming, videogame, developer, steam, studio, team">
+        <!-- WEBSITE TITLE & DESCRIPTION -->
+        <title>Ego Experiments</title>
+        <meta name="description"
+            content="Ego Experiments: Crafting immersive and narrative-driven gaming experiences that blur the lines between reality and dreamscape.">
+        <meta name="keywords"
+            content="game, gaming, videogame, developer, steam, studio, team, indie game studio, immersive storytelling, psychological thriller games, Ego Experiments, game development, narrative gaming, Unity development">
 
-    <!-- OG meta tags that improve the look of your post on social media -->
-    <meta property="og:site_name" content="" /><!--website name-->
-    <meta property="og:site" content="" /> <!--website link-->
-    <meta property="og:title" content=""/> <!--Post title-->
-    <meta property="og:description" content="" /> <!--Post description-->
-    <meta property="og:image" content="" /><!-- Image link (jpg only)-->
-    <meta property="og:url" content="" /> <!--where do you want your post to link to-->
-    <meta property="og:type" content="article" />
+        <!--Twitter Meta Tags-->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@EGOEXPERIMENTS">
+        <meta name="twitter:title"
+            content="Ego Experiments - Immersive Game Development Studio">
+        <meta name="twitter:description"
+            content="Explore games that challenge perceptions and immerse you in psychological thrillers. Crafted for those who seek deep storytelling and unique gameplay.">
+        <meta name="twitter:image"
+            content="https://egoexperiments.com/path-to-image.jpg">
 
-    <!-- Favicon and Apple Icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+        <!-- OG meta tags that improve the look of your post on social media -->
+        <meta property="og:site_name"
+            content="Ego Experiments" /><!--website name-->
+        <meta property="og:site" content="https://egoexperiments.com" />
+        <!--website link-->
+        <meta property="og:title"
+            content="Ego Experiments - Immersive Game Development Studio" />
+        <!--Post title-->
+        <meta property="og:description"
+            content="Explore games that challenge perceptions and immerse you in psychological thrillers. Crafted for those who seek deep storytelling and unique gameplay." />
+        <!--Post description-->
+        <meta property="og:image"
+            content="https://egoexperiments.com/path-to-image.jpg" /><!-- Image link (jpg only)-->
+        <meta property="og:url" content="https://egoexperiments.com" />
+        <!--where do you want your post to link to-->
+        <meta property="og:type" content="website" />
 
-    <!-- STYLES -->
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <!-- Animations -->
-    <link href="css/animations.css" rel="stylesheet">
-    <!-- Lightbox -->
-    <link href="css/lightbox.min.css" rel="stylesheet">
-    <!-- Video Lightbox -->
-    <link href="css/modal-video.min.css" rel="stylesheet">
-    <!-- Main Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-  
-</head>
-<body>
-    <!-- Loading Screen -->
-    <div id="loader-wrapper">
-        <h1 class="loader-logo">Ego Experiments</h1>
-        <div id="progress"></div>
-        <h3 class="loader-text">Innovation. Immersion. Impact.</h3>
-    </div>
-    
-    <!-- //// HEADER //// -->
-    <header id="main-header">
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
-            <div class="container">
-                <!-- Site Logo -->
-                <a id="logo" class="navbar-brand" href="#"><img class="img-fluid" src="images/logo.png" alt="site logo"></a>
-                <!-- Dropdown Button -->
-                <button id="hamburger" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Favicon and Apple Icons -->
+        <link rel="apple-touch-icon" sizes="57x57"
+            href="images/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60"
+            href="images/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72"
+            href="images/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76"
+            href="images/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114"
+            href="images/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120"
+            href="images/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144"
+            href="images/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152"
+            href="images/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180"
+            href="images/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"
+            href="images/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32"
+            href="images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96"
+            href="images/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16"
+            href="images/favicon/favicon-16x16.png">
+
+        <!-- STYLES -->
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- FontAwesome -->
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <!-- Animations -->
+        <link href="css/animations.css" rel="stylesheet">
+        <!-- Lightbox -->
+        <link href="css/lightbox.min.css" rel="stylesheet">
+        <!-- Video Lightbox -->
+        <link href="css/modal-video.min.css" rel="stylesheet">
+        <!-- Main Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <!-- Loading Screen -->
+        <div id="loader-wrapper">
+            <h1 class="loader-logo">Ego Experiments</h1>
+            <div id="progress"></div>
+            <h3 class="loader-text">Innovation. Immersion. Impact.</h3>
+        </div>
+
+        <!-- //// HEADER //// -->
+        <header id="main-header">
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+                <div class="container">
+                    <!-- Site Logo -->
+                    <a id="logo" class="navbar-brand" href="#"><img
+                            class="img-fluid" src="images/logo.png"
+                            alt="site logo"></a>
+                    <!-- Dropdown Button -->
+                    <button id="hamburger" class="navbar-toggler" type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                </button>
-                <!-- Navigation Links -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#games">Games</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#team">Team</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header><!-- Header End -->
-    
-    <!-- /// HERO SECTION /// -->
-    <div id="hero-section" class="medium-margin">
-        <div id="hero-slider" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#hero-slider" data-slide-to="0" class="active"></li>
-                <li data-target="#hero-slider" data-slide-to="1"></li>
-                <li data-target="#hero-slider" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active"><!-- Slide -->
-                    <div class="hero-overlay"></div>
-                    <img class="img-fluid" src="images/body.png" alt="First slide">
-                    <div class="carousel-caption">
-                        <h1>In Stillness, Find Solace</h1>
+                    </button>
+                    <!-- Navigation Links -->
+                    <div class="collapse navbar-collapse"
+                        id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#games">Games</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#team">Team</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                        </ul>
                     </div>
-                </div><!-- End of Slide -->
-                <div class="carousel-item"><!-- Slide -->
-                    <div class="hero-overlay"></div>
-                    <img class="img-fluid" src="images/kitchen.png" alt="Second slide">
-                    <div class="carousel-caption-left">
-                        <h1>Memory Fogs the Truth</h1>
-                        <p>The familiar becomes unsettling. The line between reality and memory fades, hope feels distant. Look closer...</p>
-                        <a class="button" href="#games">Learn More</a>
-                    </div>
-                </div><!-- End of Slide -->
-                <div class="carousel-item"><!-- Slide -->
-                    <div class="hero-overlay"></div>
-                    <img class="img-fluid" src="images/hallway.png" alt="Third slide">
-                    <div class="carousel-caption-left">
-                        <h1>Echos of What Was</h1>
-                        <p>Faded faces and forgotten moments line the walls. As you move forward, what you remember slips further away.
-                            Trace the past...</p>
-                        <a class="button" href="#games">Learn More</a>
-                    </div>
-                </div><!-- End of Slide -->
-            </div>
-             <a class="carousel-control-prev" href="#hero-slider" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#hero-slider" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-            <div id="progress-bar"></div> <!-- Carousel Progress Bar -->
-        </div>
-    </div><!-- Hero Section End -->
-    
-    <!-- /// Main Container /// -->
-    <div class="container">
-        <!-- /// ABOUT SECTION /// -->
-        <div id="about" class="large-margin">
-            <a href="about"></a><!-- Nav Anchor -->
-            <div class="row heading tiny-margin">
-                <div class="col-md-auto">
-                    <h1 class="animation-element slide-down">ABOUT <span class="colored">US</span></h1>
                 </div>
-                <div class="col">
-                    <hr class="animation-element extend">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="small-margin">At Ego Experiments Studios, we are driven by a singular vision: <b>to create immersive experiences that challenge perceptions and inspire introspection</b>. We believe that the most profound stories are those that make players look inward, confronting their deepest fears, desires, and internal conflicts.</p>
+            </nav>
+        </header><!-- Header End -->
 
-                    <p class="small-margin">By fusing <b>psychological</b> depth with <b>innovative</b> gameplay, we aim to redefine the boundaries of the horror genre, delivering experiences that not only <b>terrify</b> but leave a lasting impact, resonating with players long after the credits roll.</p>
-                    
-                    <!--<img id="awards" src="images/awards.png" class="img-fluid" alt="awads">-->
-
-                </div>
-                <div class="col-md-6">
-                    <img id="support-image" src="images/placeholder.jpg" data-src="images/about.png" class="img-fluid b-lazy" alt="digital collage">
-                </div>
-            </div>
-        </div>
-        <!-- /// GAMES SECTION /// -->
-        <div id="games" class="large-margin">
-            <a href="games"></a><!-- Nav Anchor -->
-            <div class="row heading tiny-margin">
-                <div class="col-md-auto">
-                    <h1 class="animation-element slide-down">OUR <span class="colored">GAMES</span></h1>
-                </div>
-                <div class="col">
-                    <hr class="animation-element extend">
-                </div>
-            </div>
-            <div class="row ">
-                <div class="col-md-11 small-margin">
-                   <p>Here at Ego Experiments, we create games that push boundaries and immerse players in worlds where perception is constantly questioned. Each title invites players to explore rich, atmospheric environments filled with psychological tension and emotional complexity.</p>
-                </div>
-                <div class="col-md-12">
-                    <ul class="game-tags">
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="games-portfolio ">
-
-
-
-<!-- Game Card SOLACE -->
-                <div class="row game-card pc new">
-                    <div class="col-lg-12 col-xl-5 game-card-left">
-                        <a href="#" class="js-video-button" data-video-id='DPBW_MFqeRs' data-channel="youtube"> <!-- Video link goes here -->
-                            <img src="images/SolaceWebsite1.png" data-src="images/SolaceWebsite1.png" class="img-fluid b-lazy" alt="video-thumbnail"> <!-- Video Thumbnail Img -->
-                        </a>
-                    </div>
-                    <div class="col-lg-12 col-xl-7 game-card-right">
-                        <h2 class="short-hr-left">Solace</h2>
-                        <p class="tags"><span class="subtle">Psychological Horror</span> </p>
-                        <p class="game-description">You play as a lifelong resident of Lakeview, a town where enforced conformity hides a sinister truth. Stripped of individuality, the people live in blind compliance, as the town’s eerie facade begins to crack. As your reality unravels, you must uncover the dark secrets lurking beneath the surface, where nothing is as it seems. Only in your mind can you find Solace... 
-                            <br><span class="expand colored strong" data-toggle="modal" data-target="#game1">Read More</span></p>
-                        <div class="steam-btn">
-                            <a href="https://store.steampowered.com/app/2827020/Solace/">
-                                <i class="fa fa-steam fa-3x"></i>
-                                <p>GET IT ON <br><span class="spaced">STEAM</span></p>
-                            </a>
+        <!-- /// HERO SECTION /// -->
+        <div id="hero-section" class="medium-margin">
+            <div id="hero-slider" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#hero-slider" data-slide-to="0"
+                        class="active"></li>
+                    <li data-target="#hero-slider" data-slide-to="1"></li>
+                    <li data-target="#hero-slider" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active"><!-- Slide -->
+                        <div class="hero-overlay"></div>
+                        <img class="img-fluid" src="images/body.png"
+                            alt="First slide">
+                        <div class="carousel-caption">
+                            <h1>In Stillness, Find Solace</h1>
                         </div>
-                        <div class="reviews">
-                            <a href="#"><div class="score-card">
-                                <p class="score">N/A</p>
-                                <p>Gamespot</p>
-                            </div></a>
-                            <a href="#"><div class="score-card">
-                                <p class="score">N/A</p>
-                                <p>IGN</p>
-                            </div></a>
-                            <a href="#"><div class="score-card">
-                                <p class="score">N/A</p>
-                                <p>Metacritic</p>
-                            </div></a>
+                    </div><!-- End of Slide -->
+                    <div class="carousel-item"><!-- Slide -->
+                        <div class="hero-overlay"></div>
+                        <img class="img-fluid" src="images/kitchen.png"
+                            alt="Second slide">
+                        <div class="carousel-caption-left">
+                            <h1>Memory Fogs the Truth</h1>
+                            <p>The familiar becomes unsettling. The line between
+                                reality and memory fades, hope feels distant.
+                                Look closer...</p>
+                            <a class="button" href="#games">Learn More</a>
                         </div>
-                    </div>
-                    <!-- Modal -->
-                    <div class="modal fade game-modal" id="game1" tabindex="-1" role="dialog" aria-labelledby="scales" aria-hidden="true">
-                        <div class="modal-dialog modal-lg" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title" id="scales">SWORDS &amp; SCALES</h1>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                               <div class="modal-body">
-                                   <h2 class="short-hr-left">TEAM UP AND FIGHT DRAGONS</h2>
-                                   <p>Integer eget diam felis. Quisque et aliquet lectus, et lacinia turpis. Praesent eget pretium orci. Sed vestibulum rutrum volutpat. Curabitur feugiat arcu odio, quis convallis eros laoreet ac.</p>
-                                   <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
-                                   <br>
-                                   <h2 class="short-hr-left">MAKE FRIENDS</h2>
-                                   <p>Suspendisse ultricies, dui vitae convallis blandit, ipsum sem mattis diam, in egestas arcu lacus sed lectus. Donec at interdum tellus. Quisque pellentesque a felis et rutrum. Donec condimentum magna sit amet viverra convallis. Fusce accumsan efficitur orci a commodo.</p>
-                                   <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
-                                   <br>
-                                   <h2 class="short-hr-left">TRAIN YOUR DRAGON</h2>
-                                   <p>Mauris at sapien nibh. Integer id tellus vitae ante cursus pharetra. Vestibulum ultrices eleifend enim, quis maximus nibh dapibus in. Phasellus lacinia nec leo at semper. Duis nisl odio, lacinia quis dui at, pretium tincidunt metus. Maecenas condimentum purus sit amet neque maximus tempor. Proin eros massa, ullamcorper eget rutrum eu, feugiat id purus.</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="button secondary" data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
+                    </div><!-- End of Slide -->
+                    <div class="carousel-item"><!-- Slide -->
+                        <div class="hero-overlay"></div>
+                        <img class="img-fluid" src="images/hallway.png"
+                            alt="Third slide">
+                        <div class="carousel-caption-left">
+                            <h1>Echos of What Was</h1>
+                            <p>Faded faces and forgotten moments line the walls.
+                                As you move forward, what you remember slips
+                                further away.
+                                Trace the past...</p>
+                            <a class="button" href="#games">Learn More</a>
                         </div>
-                     </div>
+                    </div><!-- End of Slide -->
                 </div>
-<!-- SOLACE Card End -->
-
-
-<!-- SOLACE PLAYABLE TEASER -->
-                <div class="row game-card pc new">
-                    <div class="col-lg-12 col-xl-5 game-card-left">
-                        <a href="#" class="js-video-button" data-video-id='DPBW_MFqeRs' data-channel="youtube"> <!-- Video link goes here -->
-                            <img src="images/SolacePlayableTeaser.png" data-src="images/SolacePlayableTeaser.png" class="img-fluid b-lazy" alt="video-thumbnail"> <!-- Video Thumbnail Img -->
-                        </a>
-                    </div>
-                <div class="col-lg-12 col-xl-7 game-card-right">
-                    <h2 class="short-hr-left">Solace: Playable Teaser</h2>
-                    <p class="tags"><span class="subtle">Atmospheric Horror | Puzzle</span> </p>
-                    <p class="game-description">Enter the fragmented psyche of Joel, a discharged police officer haunted by the disappearance of his daughter, Gwen. Sleepless and consumed by an obsessive need for answers, Joel finds himself back in his old home, yet nothing feels as it should. Shadows warp familiar rooms, memories flicker and distort, and Gwen’s presence lingers just out of reach... 
-                        <br><span class="expand colored strong" data-toggle="modal" data-target="#game1">Read More</span></p>
-                    <div class="steam-btn">
-                        <a href="https://store.steampowered.com/app/2827020/Solace/">
-                            <i class="fa fa-steam fa-3x"></i>
-                            <p>GET IT ON <br><span class="spaced">STEAM</span></p>
-                        </a>
-                    </div>
-                    <div class="reviews">
-                        <a href="#"><div class="score-card">
-                            <p class="score">N/A</p>
-                            <p>Gamespot</p>
-                        </div></a>
-                        <a href="#"><div class="score-card">
-                            <p class="score">N/A</p>
-                            <p>IGN</p>
-                        </div></a>
-                        <a href="#"><div class="score-card">
-                            <p class="score">N/A</p>
-                            <p>Metacritic</p>
-                        </div></a>
-                    </div>
-                </div>
-                <!-- Modal -->
-                <div class="modal fade game-modal" id="game1" tabindex="-1" role="dialog" aria-labelledby="scales" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title" id="scales">SWORDS &amp; SCALES</h1>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                           <div class="modal-body">
-                               <h2 class="short-hr-left">TEAM UP AND FIGHT DRAGONS</h2>
-                               <p>Integer eget diam felis. Quisque et aliquet lectus, et lacinia turpis. Praesent eget pretium orci. Sed vestibulum rutrum volutpat. Curabitur feugiat arcu odio, quis convallis eros laoreet ac.</p>
-                               <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
-                               <br>
-                               <h2 class="short-hr-left">MAKE FRIENDS</h2>
-                               <p>Suspendisse ultricies, dui vitae convallis blandit, ipsum sem mattis diam, in egestas arcu lacus sed lectus. Donec at interdum tellus. Quisque pellentesque a felis et rutrum. Donec condimentum magna sit amet viverra convallis. Fusce accumsan efficitur orci a commodo.</p>
-                               <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
-                               <br>
-                               <h2 class="short-hr-left">TRAIN YOUR DRAGON</h2>
-                               <p>Mauris at sapien nibh. Integer id tellus vitae ante cursus pharetra. Vestibulum ultrices eleifend enim, quis maximus nibh dapibus in. Phasellus lacinia nec leo at semper. Duis nisl odio, lacinia quis dui at, pretium tincidunt metus. Maecenas condimentum purus sit amet neque maximus tempor. Proin eros massa, ullamcorper eget rutrum eu, feugiat id purus.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="button secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                 </div>
+                <a class="carousel-control-prev" href="#hero-slider"
+                    role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"
+                        aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#hero-slider"
+                    role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"
+                        aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+                <div id="progress-bar"></div> <!-- Carousel Progress Bar -->
             </div>
-<!-- Game Card End -->
+        </div><!-- Hero Section End -->
 
-
-
-<!-- SOLACE ECHO -->
-<div class="row game-card pc new">
-    <div class="col-lg-12 col-xl-5 game-card-left">
-        <a href="#" class="js-video-button" data-video-id='DPBW_MFqeRs' data-channel="youtube"> <!-- Video link goes here -->
-            <img src="images/SolaceEcho.png" data-src="images/SolaceEcho.png" class="img-fluid b-lazy" alt="video-thumbnail"> <!-- Video Thumbnail Img -->
-        </a>
-    </div>
-<div class="col-lg-12 col-xl-7 game-card-right">
-    <h2 class="short-hr-left">Solace: Echo</h2>
-    <p class="tags"><span class="subtle">DLC | Psychological Horror | Mystery</span> </p>
-    <p class="game-description">In Solace: Echo, you follow Joel, an outsider and ex-detective, as he journeys to Lakeview in search of his missing daughter. Tormented by insomnia and guilt, Joel’s investigation leads him deep into the town’s hidden mysteries. As his reality fractures, the dark secrets of Lakeview begin to surface, revealing the malevolent forces at play. This prologue sets the stage for uncovering the disturbing truths beneath the town’s eerie facade...
-        <br><span class="expand colored strong" data-toggle="modal" data-target="#game1">Read More</span></p>
-    <div class="steam-btn">
-        <a href="https://store.steampowered.com/app/2827020/Solace/">
-            <i class="fa fa-steam fa-3x"></i>
-            <p>GET IT ON <br><span class="spaced">STEAM</span></p>
-        </a>
-    </div>
-    <div class="reviews">
-        <a href="#"><div class="score-card">
-            <p class="score">N/A</p>
-            <p>Gamespot</p>
-        </div></a>
-        <a href="#"><div class="score-card">
-            <p class="score">N/A</p>
-            <p>IGN</p>
-        </div></a>
-        <a href="#"><div class="score-card">
-            <p class="score">N/A</p>
-            <p>Metacritic</p>
-        </div></a>
-    </div>
-</div>
-<!-- Modal -->
-<div class="modal fade game-modal" id="game1" tabindex="-1" role="dialog" aria-labelledby="scales" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title" id="scales">SWORDS &amp; SCALES</h1>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-           <div class="modal-body">
-               <h2 class="short-hr-left">TEAM UP AND FIGHT DRAGONS</h2>
-               <p>Integer eget diam felis. Quisque et aliquet lectus, et lacinia turpis. Praesent eget pretium orci. Sed vestibulum rutrum volutpat. Curabitur feugiat arcu odio, quis convallis eros laoreet ac.</p>
-               <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
-               <br>
-               <h2 class="short-hr-left">MAKE FRIENDS</h2>
-               <p>Suspendisse ultricies, dui vitae convallis blandit, ipsum sem mattis diam, in egestas arcu lacus sed lectus. Donec at interdum tellus. Quisque pellentesque a felis et rutrum. Donec condimentum magna sit amet viverra convallis. Fusce accumsan efficitur orci a commodo.</p>
-               <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
-               <br>
-               <h2 class="short-hr-left">TRAIN YOUR DRAGON</h2>
-               <p>Mauris at sapien nibh. Integer id tellus vitae ante cursus pharetra. Vestibulum ultrices eleifend enim, quis maximus nibh dapibus in. Phasellus lacinia nec leo at semper. Duis nisl odio, lacinia quis dui at, pretium tincidunt metus. Maecenas condimentum purus sit amet neque maximus tempor. Proin eros massa, ullamcorper eget rutrum eu, feugiat id purus.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="button secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
- </div>
-</div>
-<!-- Game Card End -->
-
-
-
-
-
-
-
-
-<!-- SOLACE HOPE -->
-<div class="row game-card pc new">
-    <div class="col-lg-12 col-xl-5 game-card-left">
-        <a href="#" class="js-video-button" data-video-id='DPBW_MFqeRs' data-channel="youtube"> <!-- Video link goes here -->
-            <img src="images/SolaceHope.png" data-src="images/SolaceHope.png" class="img-fluid b-lazy" alt="video-thumbnail"> <!-- Video Thumbnail Img -->
-        </a>
-    </div>
-<div class="col-lg-12 col-xl-7 game-card-right">
-    <h2 class="short-hr-left">Solace: Hope</h2>
-    <p class="tags"><span class="subtle">DLC | Psychological Thriller | Action</span> </p>
-    <p class="game-description">In Solace: Hope, you find yourself in a world where paranoia creeps into every corner, and reality seems to shift with every step. As unseen forces tighten their grip, the familiar becomes distorted, and you are left questioning what is real. Each revelation unearths deeper, unsettling truths about the world around you, and the person you are becoming...
-        <br><span class="expand colored strong" data-toggle="modal" data-target="#game1">Read More</span></p>
-    <div class="steam-btn">
-        <a href="https://store.steampowered.com/app/2827020/Solace/">
-            <i class="fa fa-steam fa-3x"></i>
-            <p>GET IT ON <br><span class="spaced">STEAM</span></p>
-        </a>
-    </div>
-    <div class="reviews">
-        <a href="#"><div class="score-card">
-            <p class="score">N/A</p>
-            <p>Gamespot</p>
-        </div></a>
-        <a href="#"><div class="score-card">
-            <p class="score">N/A</p>
-            <p>IGN</p>
-        </div></a>
-        <a href="#"><div class="score-card">
-            <p class="score">N/A</p>
-            <p>Metacritic</p>
-        </div></a>
-    </div>
-</div>
-<!-- Modal -->
-<div class="modal fade game-modal" id="game1" tabindex="-1" role="dialog" aria-labelledby="scales" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title" id="scales">SWORDS &amp; SCALES</h1>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-           <div class="modal-body">
-               <h2 class="short-hr-left">TEAM UP AND FIGHT DRAGONS</h2>
-               <p>Integer eget diam felis. Quisque et aliquet lectus, et lacinia turpis. Praesent eget pretium orci. Sed vestibulum rutrum volutpat. Curabitur feugiat arcu odio, quis convallis eros laoreet ac.</p>
-               <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
-               <br>
-               <h2 class="short-hr-left">MAKE FRIENDS</h2>
-               <p>Suspendisse ultricies, dui vitae convallis blandit, ipsum sem mattis diam, in egestas arcu lacus sed lectus. Donec at interdum tellus. Quisque pellentesque a felis et rutrum. Donec condimentum magna sit amet viverra convallis. Fusce accumsan efficitur orci a commodo.</p>
-               <img class="img-fluid" src="images/game_large.jpg" alt="screenshot">
-               <br>
-               <h2 class="short-hr-left">TRAIN YOUR DRAGON</h2>
-               <p>Mauris at sapien nibh. Integer id tellus vitae ante cursus pharetra. Vestibulum ultrices eleifend enim, quis maximus nibh dapibus in. Phasellus lacinia nec leo at semper. Duis nisl odio, lacinia quis dui at, pretium tincidunt metus. Maecenas condimentum purus sit amet neque maximus tempor. Proin eros massa, ullamcorper eget rutrum eu, feugiat id purus.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="button secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
- </div>
-</div>
-<!-- Game Card End -->
-                
-                
-
-                
-               
-            </div>
-        </div>
-        <!-- /// TEAM SECTION /// -->
-        <div id="team" class="large-margin" style="
-            padding: 1% 5%;">
-            <a href="team"></a><!-- Nav Anchor -->
-            <div class="row heading tiny-margin">
-                <div class="col-md-auto">
-                    <h1 class="animation-element slide-down">THE <span class="colored">TEAM</span></h1>
-                </div>
-                <div class="col">
-                    <hr class="animation-element extend">
-                </div>
-            </div>
-            <div class="row medium-margin">
-                <div class="col-md-11 tiny-margin">
-                    <p>Our shared passion fuels Ego Experiments Studios. We’re a team united by a commitment to crafting deeply immersive games that push the boundaries of storytelling, gameplay, and psychological depth. With expertise in technical innovation and atmospheric design, we bring together unique skills and perspectives to create unforgettable experiences that challenge players to explore, reflect, and engage on a profound level.</p>
-                </div>
-                <div id="full-row" class="row text-center">
-                   
-                    <div class="col-md-3 team-card">
-                        <figure>
-                            <img src="images/PFP3.png" data-src="images/PFP3.png" class="img-fluid b-lazy" alt="teammember">
-                            <figcaption class="team-caption">
-                                <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p>
-                                <hr class="hr-short">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin fa-lg"></i></a></li>
-                                </ul>
-                            </figcaption>
-                        </figure>
-                        <p class="team-name">Anim W.</p>
-                        <p class="subtle">CEO, Co-Founder</p>
+        <!-- /// Main Container /// -->
+        <div class="container">
+            <!-- /// ABOUT SECTION /// -->
+            <div id="about" class="large-margin">
+                <a href="about"></a><!-- Nav Anchor -->
+                <div class="row heading tiny-margin">
+                    <div class="col-md-auto">
+                        <h1 class="animation-element slide-down">ABOUT <span
+                                class="colored">US</span></h1>
                     </div>
-                    <div class="col-md-3 team-card">
-
-                        <figure>
-                            <img src="images/PFP2.png" data-src="images/PFP2.png" class="img-fluid b-lazy" alt="teammember">
-                            <figcaption class="team-caption">
-                                <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p>
-                                <hr class="hr-short">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin fa-lg"></i></a></li>
-                                </ul>
-                            </figcaption>
-                        </figure>
-                        <p class="team-name">Gabe K.</p>
-                        <p class="subtle">CCO, Co-Founder</p>
-                    </div>
-
-                    <div class="col-md-3 team-card">
-                        <figure>
-                            <img src="images/PFP1.png" data-src="images/PFP1.png" class="img-fluid b-lazy" alt="teammember">
-                            <figcaption class="team-caption">
-                                <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p>
-                                <hr class="hr-short">
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-linkedin fa-lg"></i></a></li>
-                                </ul>
-                            </figcaption>
-                        </figure>
-                        <p class="team-name">Name</p>
-                        <p class="subtle">Title, To Be Announced</p>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="row tiny-margin">
-                <div class="col-md-11">
-                    <h2 class="short-hr-left">DEVELOPMENT GALLERY</h2>
-                    <p>A collection of in-game snapshots capturing the evolving world of Solace, visuals that showcase our dedication to creating a truly immersive experience.</p>
-                </div>
-            </div>
-            <div class="grid-gallery">
-                <div class="row">
-                    <div class="col-md-4 gallery-item">
-                        <a href="images/Photo4.png" data-lightbox="studio_gallery">
-                            <div class="overlay gallery">
-                                <i class="fa fa-picture-o fa-3x"></i>
-                            </div>
-                            <img src="images/Photo4.png" data-src="images/Photo4.png" class="img-fluid b-lazy" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-4 gallery-item">
-                        <a href="images/Photo3.png" data-lightbox="studio_gallery">
-                            <div class="overlay gallery">
-                                <i class="fa fa-picture-o fa-3x"></i>
-                            </div>
-                            <img src="images/Photo3.png" data-src="images/Photo3.png" class="img-fluid b-lazy" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-4 gallery-item">
-                        <a href="images/Photo6.png" data-lightbox="studio_gallery">
-                            <div class="overlay gallery">
-                                <i class="fa fa-picture-o fa-3x"></i>
-                            </div>
-                            <img src="images/Photo6.png" data-src="images/Photo6.png" class="img-fluid b-lazy" alt="">
-                        </a>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-4 gallery-item">
-                        <a href="images/Photo5.png" data-lightbox="studio_gallery">
-                            <div class="overlay gallery">
-                                <i class="fa fa-picture-o fa-3x"></i>
-                            </div>
-                            <img src="images/Photo5.png" data-src="images/Photo5.png" class="img-fluid b-lazy" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-4 gallery-item">
-                        <a href="images/Photo7.png" data-lightbox="studio_gallery">
-                            <div class="overlay gallery">
-                                <i class="fa fa-picture-o fa-3x"></i>
-                            </div>
-                            <img src="images/Photo7.png" data-src="images/Photo7.png" class="img-fluid b-lazy" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-4 gallery-item">
-                        <a href="images/JoelPhoto.png" data-lightbox="studio_gallery">
-                            <div class="overlay gallery">
-                                <i class="fa fa-picture-o fa-3x"></i>
-                            </div>
-                            <img src="images/JoelPhoto.png" data-src="images/JoelPhoto.png" class="img-fluid b-lazy" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /// CAREERS SECTION /// -->
-        
-        <!-- /// CONTACT SECTION /// -->
-        <div id="contact" class="large-margin" style="
-            padding: 1% 5%;">
-            <a href="contact"></a><!-- Nav Anchor -->
-            <div class="row heading tiny-margin">
-                <div class="col-md-auto">
-                    <h1 class="animation-element slide-down">GET IN <span class="colored">TOUCH</span></h1>
-                </div>
-                <div class="col">
-                    <hr class="animation-element extend">
-                </div>
-            </div>
-            <div class="">
-                <div class="row small-margin">
-                    <div class="col-md-11">
-                        <p>We would love to hear from you. Our newsletter is coming soon! Sign up to stay connected, and be the first to receive exclusive updates, insights, and a behind-the-scenes look at Ego Experiments Studios.</p>
+                    <div class="col">
+                        <hr class="animation-element extend">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <h2 class="short-hr-left">NEWSLETTER</h2>
-                        <form id="contactForm" data-toggle="validator">
-                            <div class="form-group">
-                                <!-- Name Field -->
-                                <input type="text" id="name" placeholder="Name*" required size="35" data-error="Name is required">
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <!-- Email Field -->
-                                <input type="email" id="email" placeholder="Email*" required size="35" data-error="Email is required">
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <!-- Submit Button -->
-                                <button type="submit" class="button">Sign Up</button>
-                                <!-- Success Message -->
-                                <div id="msgSubmit" class="text-center hidden"></div>
-                            </div>
-                        </form>
+                        <p class="small-margin">At Ego Experiments Studios, we
+                            are driven by a singular vision: <b>to create
+                                immersive experiences that challenge perceptions
+                                and inspire introspection</b>. We believe that
+                            the most profound stories are those that make
+                            players look inward, confronting their deepest
+                            fears, desires, and internal conflicts.</p>
+
+                        <p class="small-margin">By fusing <b>psychological</b>
+                            depth with <b>innovative</b> gameplay, we aim to
+                            redefine the boundaries of the horror genre,
+                            delivering experiences that not only <b>terrify</b>
+                            but leave a lasting impact, resonating with players
+                            long after the credits roll.</p>
+
+                        <!--<img id="awards" src="images/awards.png" class="img-fluid" alt="awads">-->
+
                     </div>
-                    <div class="col-md-6" style="text-align: center;">
-                        <h2 class="short-hr-left">OUR DETAILS</h2>
-                        <div id="contact-info">
-                            <ul>
-                                <li></li>
-                                <li><i class="fa fa-envelope"></i><p>Email: <span class="colored"><a href="mailto:contact@egoexperiments.com">Contact@EgoExperiments.com</a></span></p></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </div>
-                        <!-- Google Map -->
-                        <img src="images/logo.png" data-src="images/logo.png" class="img-fluid b-lazy" alt="video-thumbnail" style="
-                            padding: 5% 20%;">
+                    <div class="col-md-6">
+                        <img id="support-image" src="images/placeholder.jpg"
+                            data-src="images/about.png" class="img-fluid b-lazy"
+                            alt="digital collage">
                     </div>
                 </div>
             </div>
-        </div>
-    </div><!-- Main Container End -->
-    <!-- /// FOOTER /// -->
-    <footer id="main-footer">
-        <div id="footer"> 
-            <div class="container">
-                <div class="row">
+            <!-- /// GAMES SECTION /// -->
+            <div id="games" class="large-margin">
+                <a href="games"></a><!-- Nav Anchor -->
+                <div class="row heading tiny-margin">
+                    <div class="col-md-auto">
+                        <h1 class="animation-element slide-down">OUR <span
+                                class="colored">GAMES</span></h1>
+                    </div>
+                    <div class="col">
+                        <hr class="animation-element extend">
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-11 small-margin">
+                        <p>Here at Ego Experiments, we create games that push
+                            boundaries and immerse players in worlds where
+                            perception is constantly questioned. Each title
+                            invites players to explore rich, atmospheric
+                            environments filled with psychological tension and
+                            emotional complexity.</p>
+                    </div>
                     <div class="col-md-12">
-                        <p id="copyright">&copy; Ego Experiments Studios Ltd. <span id="year"> </span></p><!-- Copyright Text -->
-                        <ul class="social-links"> <!-- Social Media Icons -->
-                            <li><a href="https://x.com/EGOEXPERIMENTS"><i class="fa fa-twitter  fa-lg icon-social"></i></a></li>
-                            <li><a href="https://www.linkedin.com/company/ego-experiments-studios/"><i class="fa fa-linkedin fa-lg icon-social"></i></a>
-                            <li><a href="https://www.instagram.com/ego.experiments/"><i class="fa fa-instagram fa-lg icon-social"></i></a>
+                        <ul class="game-tags">
+                            <li></li>
                         </ul>
                     </div>
                 </div>
-            </div><!-- Container End -->
-        </div>
-    </footer><!-- Footer End -->
-    
-    <!-- //// SCRIPTS //// -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/blazy.min.js"></script>
-    <script src="js/slide-bar.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/lightbox.min.js"></script>
-    <script src="js/jquery-modal-video.min.js"></script>
-    <script src="js/validator.min.js"></script>
-    <script src="js/strider.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB64kJJiSynOc9ZqkNMOyl94cvsw5Z2uno"></script>
-</body>
-</html>
+                <div class="games-portfolio ">
+
+                    <!-- Game Card SOLACE -->
+                    <div class="row game-card pc new">
+                        <div class="col-lg-12 col-xl-5 game-card-left">
+                            <a href="#" class="js-video-button"
+                                data-video-id='DPBW_MFqeRs'
+                                data-channel="youtube">
+                                <!-- Video link goes here -->
+                                <img src="images/SolaceWebsite1.png"
+                                    data-src="images/SolaceWebsite1.png"
+                                    class="img-fluid b-lazy"
+                                    alt="video-thumbnail">
+                                <!-- Video Thumbnail Img -->
+                            </a>
+                        </div>
+                        <div class="col-lg-12 col-xl-7 game-card-right">
+                            <h2 class="short-hr-left">Solace</h2>
+                            <p class="tags"><span class="subtle">Psychological
+                                    Horror</span> </p>
+                            <p class="game-description">You play as a lifelong
+                                resident of Lakeview, a town where enforced
+                                conformity hides a sinister truth. Stripped of
+                                individuality, the people live in blind
+                                compliance, as the town’s eerie facade begins to
+                                crack. As your reality unravels, you must
+                                uncover the dark secrets lurking beneath the
+                                surface, where nothing is as it seems. Only in
+                                your mind can you find Solace...
+                                <br><span class="expand colored strong"
+                                    data-toggle="modal"
+                                    data-target="#game1">Read More</span></p>
+                            <div class="steam-btn">
+                                <a
+                                    href="https://store.steampowered.com/app/2827020/Solace/">
+                                    <i class="fa fa-steam fa-3x"></i>
+                                    <p>GET IT ON <br><span
+                                            class="spaced">STEAM</span></p>
+                                </a>
+                            </div>
+                            <div class="reviews">
+                                <a href="#"><div class="score-card">
+                                        <p class="score">N/A</p>
+                                        <p>Gamespot</p>
+                                    </div></a>
+                                <a href="#"><div class="score-card">
+                                        <p class="score">N/A</p>
+                                        <p>IGN</p>
+                                    </div></a>
+                                <a href="#"><div class="score-card">
+                                        <p class="score">N/A</p>
+                                        <p>Metacritic</p>
+                                    </div></a>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade game-modal" id="game1"
+                            tabindex="-1" role="dialog" aria-labelledby="scales"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title"
+                                            id="scales">SWORDS &amp; SCALES</h1>
+                                        <button type="button" class="close"
+                                            data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span
+                                                aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h2 class="short-hr-left">TEAM UP AND
+                                            FIGHT DRAGONS</h2>
+                                        <p>Integer eget diam felis. Quisque et
+                                            aliquet lectus, et lacinia turpis.
+                                            Praesent eget pretium orci. Sed
+                                            vestibulum rutrum volutpat.
+                                            Curabitur feugiat arcu odio, quis
+                                            convallis eros laoreet ac.</p>
+                                        <img class="img-fluid"
+                                            src="images/game_large.jpg"
+                                            alt="screenshot">
+                                        <br>
+                                        <h2 class="short-hr-left">MAKE
+                                            FRIENDS</h2>
+                                        <p>Suspendisse ultricies, dui vitae
+                                            convallis blandit, ipsum sem mattis
+                                            diam, in egestas arcu lacus sed
+                                            lectus. Donec at interdum tellus.
+                                            Quisque pellentesque a felis et
+                                            rutrum. Donec condimentum magna sit
+                                            amet viverra convallis. Fusce
+                                            accumsan efficitur orci a
+                                            commodo.</p>
+                                        <img class="img-fluid"
+                                            src="images/game_large.jpg"
+                                            alt="screenshot">
+                                        <br>
+                                        <h2 class="short-hr-left">TRAIN YOUR
+                                            DRAGON</h2>
+                                        <p>Mauris at sapien nibh. Integer id
+                                            tellus vitae ante cursus pharetra.
+                                            Vestibulum ultrices eleifend enim,
+                                            quis maximus nibh dapibus in.
+                                            Phasellus lacinia nec leo at semper.
+                                            Duis nisl odio, lacinia quis dui at,
+                                            pretium tincidunt metus. Maecenas
+                                            condimentum purus sit amet neque
+                                            maximus tempor. Proin eros massa,
+                                            ullamcorper eget rutrum eu, feugiat
+                                            id purus.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button"
+                                            class="button secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- SOLACE Card End -->
+
+                    <!-- SOLACE PLAYABLE TEASER -->
+                    <div class="row game-card pc new">
+                        <div class="col-lg-12 col-xl-5 game-card-left">
+                            <a href="#" class="js-video-button"
+                                data-video-id='DPBW_MFqeRs'
+                                data-channel="youtube">
+                                <!-- Video link goes here -->
+                                <img src="images/SolacePlayableTeaser.png"
+                                    data-src="images/SolacePlayableTeaser.png"
+                                    class="img-fluid b-lazy"
+                                    alt="video-thumbnail">
+                                <!-- Video Thumbnail Img -->
+                            </a>
+                        </div>
+                        <div class="col-lg-12 col-xl-7 game-card-right">
+                            <h2 class="short-hr-left">Solace: Playable
+                                Teaser</h2>
+                            <p class="tags"><span class="subtle">Atmospheric
+                                    Horror | Puzzle</span> </p>
+                            <p class="game-description">Enter the fragmented
+                                psyche of Joel, a discharged police officer
+                                haunted by the disappearance of his daughter,
+                                Gwen. Sleepless and consumed by an obsessive
+                                need for answers, Joel finds himself back in his
+                                old home, yet nothing feels as it should.
+                                Shadows warp familiar rooms, memories flicker
+                                and distort, and Gwen’s presence lingers just
+                                out of reach...
+                                <br><span class="expand colored strong"
+                                    data-toggle="modal"
+                                    data-target="#game1">Read More</span></p>
+                            <div class="steam-btn">
+                                <a
+                                    href="https://store.steampowered.com/app/2827020/Solace/">
+                                    <i class="fa fa-steam fa-3x"></i>
+                                    <p>GET IT ON <br><span
+                                            class="spaced">STEAM</span></p>
+                                </a>
+                            </div>
+                            <div class="reviews">
+                                <a href="#"><div class="score-card">
+                                        <p class="score">N/A</p>
+                                        <p>Gamespot</p>
+                                    </div></a>
+                                <a href="#"><div class="score-card">
+                                        <p class="score">N/A</p>
+                                        <p>IGN</p>
+                                    </div></a>
+                                <a href="#"><div class="score-card">
+                                        <p class="score">N/A</p>
+                                        <p>Metacritic</p>
+                                    </div></a>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade game-modal" id="game1"
+                            tabindex="-1" role="dialog" aria-labelledby="scales"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title"
+                                            id="scales">SWORDS &amp; SCALES</h1>
+                                        <button type="button" class="close"
+                                            data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span
+                                                aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h2 class="short-hr-left">TEAM UP AND
+                                            FIGHT DRAGONS</h2>
+                                        <p>Integer eget diam felis. Quisque et
+                                            aliquet lectus, et lacinia turpis.
+                                            Praesent eget pretium orci. Sed
+                                            vestibulum rutrum volutpat.
+                                            Curabitur feugiat arcu odio, quis
+                                            convallis eros laoreet ac.</p>
+                                        <img class="img-fluid"
+                                            src="images/game_large.jpg"
+                                            alt="screenshot">
+                                        <br>
+                                        <h2 class="short-hr-left">MAKE
+                                            FRIENDS</h2>
+                                        <p>Suspendisse ultricies, dui vitae
+                                            convallis blandit, ipsum sem mattis
+                                            diam, in egestas arcu lacus sed
+                                            lectus. Donec at interdum tellus.
+                                            Quisque pellentesque a felis et
+                                            rutrum. Donec condimentum magna sit
+                                            amet viverra convallis. Fusce
+                                            accumsan efficitur orci a
+                                            commodo.</p>
+                                        <img class="img-fluid"
+                                            src="images/game_large.jpg"
+                                            alt="screenshot">
+                                        <br>
+                                        <h2 class="short-hr-left">TRAIN YOUR
+                                            DRAGON</h2>
+                                        <p>Mauris at sapien nibh. Integer id
+                                            tellus vitae ante cursus pharetra.
+                                            Vestibulum ultrices eleifend enim,
+                                            quis maximus nibh dapibus in.
+                                            Phasellus lacinia nec leo at semper.
+                                            Duis nisl odio, lacinia quis dui at,
+                                            pretium tincidunt metus. Maecenas
+                                            condimentum purus sit amet neque
+                                            maximus tempor. Proin eros massa,
+                                            ullamcorper eget rutrum eu, feugiat
+                                            id purus.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button"
+                                            class="button secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Game Card End -->
+
+                    <!-- SOLACE ECHO -->
+                    <div class="row game-card pc new">
+                        <div class="col-lg-12 col-xl-5 game-card-left">
+                            <a href="#" class="js-video-button"
+                                data-video-id='DPBW_MFqeRs'
+                                data-channel="youtube">
+                                <!-- Video link goes here -->
+                                <img src="images/SolaceEcho.png"
+                                    data-src="images/SolaceEcho.png"
+                                    class="img-fluid b-lazy"
+                                    alt="video-thumbnail">
+                                <!-- Video Thumbnail Img -->
+                            </a>
+                        </div>
+                        <div class="col-lg-12 col-xl-7 game-card-right">
+                            <h2 class="short-hr-left">Solace: Echo</h2>
+                            <p class="tags"><span class="subtle">DLC |
+                                    Psychological Horror | Mystery</span> </p>
+                            <p class="game-description">In Solace: Echo, you
+                                follow Joel, an outsider and ex-detective, as he
+                                journeys to Lakeview in search of his missing
+                                daughter. Tormented by insomnia and guilt,
+                                Joel’s investigation leads him deep into the
+                                town’s hidden mysteries. As his reality
+                                fractures, the dark secrets of Lakeview begin to
+                                surface, revealing the malevolent forces at
+                                play. This prologue sets the stage for
+                                uncovering the disturbing truths beneath the
+                                town’s eerie facade...
+                                <br><span class="expand colored strong"
+                                    data-toggle="modal"
+                                    data-target="#game1">Read More</span></p>
+                            <div class="steam-btn">
+                                <a
+                                    href="https://store.steampowered.com/app/2827020/Solace/">
+                                    <i class="fa fa-steam fa-3x"></i>
+                                    <p>GET IT ON <br><span
+                                            class="spaced">STEAM</span></p>
+                                </a>
+                            </div>
+                            <div class="reviews">
+                                <a href="#"><div class="score-card">
+                                        <p class="score">N/A</p>
+                                        <p>Gamespot</p>
+                                    </div></a>
+                                <a href="#"><div class="score-card">
+                                        <p class="score">N/A</p>
+                                        <p>IGN</p>
+                                    </div></a>
+                                <a href="#"><div class="score-card">
+                                        <p class="score">N/A</p>
+                                        <p>Metacritic</p>
+                                    </div></a>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade game-modal" id="game1"
+                            tabindex="-1" role="dialog" aria-labelledby="scales"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title"
+                                            id="scales">SWORDS &amp; SCALES</h1>
+                                        <button type="button" class="close"
+                                            data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span
+                                                aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h2 class="short-hr-left">TEAM UP AND
+                                            FIGHT DRAGONS</h2>
+                                        <p>Integer eget diam felis. Quisque et
+                                            aliquet lectus, et lacinia turpis.
+                                            Praesent eget pretium orci. Sed
+                                            vestibulum rutrum volutpat.
+                                            Curabitur feugiat arcu odio, quis
+                                            convallis eros laoreet ac.</p>
+                                        <img class="img-fluid"
+                                            src="images/game_large.jpg"
+                                            alt="screenshot">
+                                        <br>
+                                        <h2 class="short-hr-left">MAKE
+                                            FRIENDS</h2>
+                                        <p>Suspendisse ultricies, dui vitae
+                                            convallis blandit, ipsum sem mattis
+                                            diam, in egestas arcu lacus sed
+                                            lectus. Donec at interdum tellus.
+                                            Quisque pellentesque a felis et
+                                            rutrum. Donec condimentum magna sit
+                                            amet viverra convallis. Fusce
+                                            accumsan efficitur orci a
+                                            commodo.</p>
+                                        <img class="img-fluid"
+                                            src="images/game_large.jpg"
+                                            alt="screenshot">
+                                        <br>
+                                        <h2 class="short-hr-left">TRAIN YOUR
+                                            DRAGON</h2>
+                                        <p>Mauris at sapien nibh. Integer id
+                                            tellus vitae ante cursus pharetra.
+                                            Vestibulum ultrices eleifend enim,
+                                            quis maximus nibh dapibus in.
+                                            Phasellus lacinia nec leo at semper.
+                                            Duis nisl odio, lacinia quis dui at,
+                                            pretium tincidunt metus. Maecenas
+                                            condimentum purus sit amet neque
+                                            maximus tempor. Proin eros massa,
+                                            ullamcorper eget rutrum eu, feugiat
+                                            id purus.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button"
+                                            class="button secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Game Card End -->
+
+                    <!-- SOLACE HOPE -->
+                    <div class="row game-card pc new">
+                        <div class="col-lg-12 col-xl-5 game-card-left">
+                            <a href="#" class="js-video-button"
+                                data-video-id='DPBW_MFqeRs'
+                                data-channel="youtube">
+                                <!-- Video link goes here -->
+                                <img src="images/SolaceHope.png"
+                                    data-src="images/SolaceHope.png"
+                                    class="img-fluid b-lazy"
+                                    alt="video-thumbnail">
+                                <!-- Video Thumbnail Img -->
+                            </a>
+                        </div>
+                        <div class="col-lg-12 col-xl-7 game-card-right">
+                            <h2 class="short-hr-left">Solace: Hope</h2>
+                            <p class="tags"><span class="subtle">DLC |
+                                    Psychological Thriller | Action</span> </p>
+                            <p class="game-description">In Solace: Hope, you
+                                find yourself in a world where paranoia creeps
+                                into every corner, and reality seems to shift
+                                with every step. As unseen forces tighten their
+                                grip, the familiar becomes distorted, and you
+                                are left questioning what is real. Each
+                                revelation unearths deeper, unsettling truths
+                                about the world around you, and the person you
+                                are becoming...
+                                <br><span class="expand colored strong"
+                                    data-toggle="modal"
+                                    data-target="#game1">Read More</span></p>
+                            <div class="steam-btn">
+                                <a
+                                    href="https://store.steampowered.com/app/2827020/Solace/">
+                                    <i class="fa fa-steam fa-3x"></i>
+                                    <p>GET IT ON <br><span
+                                            class="spaced">STEAM</span></p>
+                                </a>
+                            </div>
+                            <div class="reviews">
+                                <a href="#"><div class="score-card">
+                                        <p class="score">N/A</p>
+                                        <p>Gamespot</p>
+                                    </div></a>
+                                <a href="#"><div class="score-card">
+                                        <p class="score">N/A</p>
+                                        <p>IGN</p>
+                                    </div></a>
+                                <a href="#"><div class="score-card">
+                                        <p class="score">N/A</p>
+                                        <p>Metacritic</p>
+                                    </div></a>
+                            </div>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade game-modal" id="game1"
+                            tabindex="-1" role="dialog" aria-labelledby="scales"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title"
+                                            id="scales">SWORDS &amp; SCALES</h1>
+                                        <button type="button" class="close"
+                                            data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span
+                                                aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h2 class="short-hr-left">TEAM UP AND
+                                            FIGHT DRAGONS</h2>
+                                        <p>Integer eget diam felis. Quisque et
+                                            aliquet lectus, et lacinia turpis.
+                                            Praesent eget pretium orci. Sed
+                                            vestibulum rutrum volutpat.
+                                            Curabitur feugiat arcu odio, quis
+                                            convallis eros laoreet ac.</p>
+                                        <img class="img-fluid"
+                                            src="images/game_large.jpg"
+                                            alt="screenshot">
+                                        <br>
+                                        <h2 class="short-hr-left">MAKE
+                                            FRIENDS</h2>
+                                        <p>Suspendisse ultricies, dui vitae
+                                            convallis blandit, ipsum sem mattis
+                                            diam, in egestas arcu lacus sed
+                                            lectus. Donec at interdum tellus.
+                                            Quisque pellentesque a felis et
+                                            rutrum. Donec condimentum magna sit
+                                            amet viverra convallis. Fusce
+                                            accumsan efficitur orci a
+                                            commodo.</p>
+                                        <img class="img-fluid"
+                                            src="images/game_large.jpg"
+                                            alt="screenshot">
+                                        <br>
+                                        <h2 class="short-hr-left">TRAIN YOUR
+                                            DRAGON</h2>
+                                        <p>Mauris at sapien nibh. Integer id
+                                            tellus vitae ante cursus pharetra.
+                                            Vestibulum ultrices eleifend enim,
+                                            quis maximus nibh dapibus in.
+                                            Phasellus lacinia nec leo at semper.
+                                            Duis nisl odio, lacinia quis dui at,
+                                            pretium tincidunt metus. Maecenas
+                                            condimentum purus sit amet neque
+                                            maximus tempor. Proin eros massa,
+                                            ullamcorper eget rutrum eu, feugiat
+                                            id purus.</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button"
+                                            class="button secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Game Card End -->
+
+                </div>
+            </div>
+            <!-- /// TEAM SECTION /// -->
+            <div id="team" class="large-margin" style="
+            padding: 1% 5%;">
+                <a href="team"></a><!-- Nav Anchor -->
+                <div class="row heading tiny-margin">
+                    <div class="col-md-auto">
+                        <h1 class="animation-element slide-down">THE <span
+                                class="colored">TEAM</span></h1>
+                    </div>
+                    <div class="col">
+                        <hr class="animation-element extend">
+                    </div>
+                </div>
+                <div class="row medium-margin">
+                    <div class="col-md-11 tiny-margin">
+                        <p>Our shared passion fuels Ego Experiments Studios.
+                            We’re a team united by a commitment to crafting
+                            deeply immersive games that push the boundaries of
+                            storytelling, gameplay, and psychological depth.
+                            With expertise in technical innovation and
+                            atmospheric design, we bring together unique skills
+                            and perspectives to create unforgettable experiences
+                            that challenge players to explore, reflect, and
+                            engage on a profound level.</p>
+                    </div>
+                    <div id="full-row" class="row text-center">
+
+                        <div class="col-md-3 team-card">
+                            <figure>
+                                <img src="images/PFP3.png"
+                                    data-src="images/PFP3.png"
+                                    class="img-fluid b-lazy" alt="teammember">
+                                <figcaption class="team-caption">
+                                    <p>“Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit.”</p>
+                                    <hr class="hr-short">
+                                    <ul>
+                                        <li><a href="#"><i
+                                                    class="fa fa-facebook fa-lg"></i></a></li>
+                                        <li><a href="#"><i
+                                                    class="fa fa-twitter fa-lg"></i></a></li>
+                                        <li><a href="#"><i
+                                                    class="fa fa-linkedin fa-lg"></i></a></li>
+                                    </ul>
+                                </figcaption>
+                            </figure>
+                            <p class="team-name">Anim W.</p>
+                            <p class="subtle">CEO, Co-Founder</p>
+                        </div>
+                        <div class="col-md-3 team-card">
+
+                            <figure>
+                                <img src="images/PFP2.png"
+                                    data-src="images/PFP2.png"
+                                    class="img-fluid b-lazy" alt="teammember">
+                                <figcaption class="team-caption">
+                                    <p>“Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit.”</p>
+                                    <hr class="hr-short">
+                                    <ul>
+                                        <li><a href="#"><i
+                                                    class="fa fa-facebook fa-lg"></i></a></li>
+                                        <li><a href="#"><i
+                                                    class="fa fa-twitter fa-lg"></i></a></li>
+                                        <li><a href="#"><i
+                                                    class="fa fa-linkedin fa-lg"></i></a></li>
+                                    </ul>
+                                </figcaption>
+                            </figure>
+                            <p class="team-name">Gabe K.</p>
+                            <p class="subtle">CCO, Co-Founder</p>
+                        </div>
+
+                        <div class="col-md-3 team-card">
+                            <figure>
+                                <img src="images/PFP1.png"
+                                    data-src="images/PFP1.png"
+                                    class="img-fluid b-lazy" alt="teammember">
+                                <figcaption class="team-caption">
+                                    <p>“Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit.”</p>
+                                    <hr class="hr-short">
+                                    <ul>
+                                        <li><a href="#"><i
+                                                    class="fa fa-facebook fa-lg"></i></a></li>
+                                        <li><a href="#"><i
+                                                    class="fa fa-twitter fa-lg"></i></a></li>
+                                        <li><a href="#"><i
+                                                    class="fa fa-linkedin fa-lg"></i></a></li>
+                                    </ul>
+                                </figcaption>
+                            </figure>
+                            <p class="team-name">Name</p>
+                            <p class="subtle">Title, To Be Announced</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row tiny-margin">
+                    <div class="col-md-11">
+                        <h2 class="short-hr-left">DEVELOPMENT GALLERY</h2>
+                        <p>A collection of in-game snapshots capturing the
+                            evolving world of Solace, visuals that showcase our
+                            dedication to creating a truly immersive
+                            experience.</p>
+                    </div>
+                </div>
+                <div class="grid-gallery">
+                    <div class="row">
+                        <div class="col-md-4 gallery-item">
+                            <a href="images/Photo4.png"
+                                data-lightbox="studio_gallery">
+                                <div class="overlay gallery">
+                                    <i class="fa fa-picture-o fa-3x"></i>
+                                </div>
+                                <img src="images/Photo4.png"
+                                    data-src="images/Photo4.png"
+                                    class="img-fluid b-lazy" alt>
+                            </a>
+                        </div>
+                        <div class="col-md-4 gallery-item">
+                            <a href="images/Photo3.png"
+                                data-lightbox="studio_gallery">
+                                <div class="overlay gallery">
+                                    <i class="fa fa-picture-o fa-3x"></i>
+                                </div>
+                                <img src="images/Photo3.png"
+                                    data-src="images/Photo3.png"
+                                    class="img-fluid b-lazy" alt>
+                            </a>
+                        </div>
+                        <div class="col-md-4 gallery-item">
+                            <a href="images/Photo6.png"
+                                data-lightbox="studio_gallery">
+                                <div class="overlay gallery">
+                                    <i class="fa fa-picture-o fa-3x"></i>
+                                </div>
+                                <img src="images/Photo6.png"
+                                    data-src="images/Photo6.png"
+                                    class="img-fluid b-lazy" alt>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 gallery-item">
+                            <a href="images/Photo5.png"
+                                data-lightbox="studio_gallery">
+                                <div class="overlay gallery">
+                                    <i class="fa fa-picture-o fa-3x"></i>
+                                </div>
+                                <img src="images/Photo5.png"
+                                    data-src="images/Photo5.png"
+                                    class="img-fluid b-lazy" alt>
+                            </a>
+                        </div>
+                        <div class="col-md-4 gallery-item">
+                            <a href="images/Photo7.png"
+                                data-lightbox="studio_gallery">
+                                <div class="overlay gallery">
+                                    <i class="fa fa-picture-o fa-3x"></i>
+                                </div>
+                                <img src="images/Photo7.png"
+                                    data-src="images/Photo7.png"
+                                    class="img-fluid b-lazy" alt>
+                            </a>
+                        </div>
+                        <div class="col-md-4 gallery-item">
+                            <a href="images/JoelPhoto.png"
+                                data-lightbox="studio_gallery">
+                                <div class="overlay gallery">
+                                    <i class="fa fa-picture-o fa-3x"></i>
+                                </div>
+                                <img src="images/JoelPhoto.png"
+                                    data-src="images/JoelPhoto.png"
+                                    class="img-fluid b-lazy" alt>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /// CAREERS SECTION /// -->
+
+            <!-- /// CONTACT SECTION /// -->
+            <div id="contact" class="large-margin" style="
+            padding: 1% 5%;">
+                <a href="contact"></a><!-- Nav Anchor -->
+                <div class="row heading tiny-margin">
+                    <div class="col-md-auto">
+                        <h1 class="animation-element slide-down">GET IN <span
+                                class="colored">TOUCH</span></h1>
+                    </div>
+                    <div class="col">
+                        <hr class="animation-element extend">
+                    </div>
+                </div>
+                <div class>
+                    <div class="row small-margin">
+                        <div class="col-md-11">
+                            <p>We would love to hear from you. Our newsletter is
+                                coming soon! Sign up to stay connected, and be
+                                the first to receive exclusive updates,
+                                insights, and a behind-the-scenes look at Ego
+                                Experiments Studios.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="short-hr-left">NEWSLETTER</h2>
+                            <form id="contactForm" data-toggle="validator">
+                                <div class="form-group">
+                                    <!-- Name Field -->
+                                    <input type="text" id="name"
+                                        placeholder="Name*" required size="35"
+                                        data-error="Name is required">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <!-- Email Field -->
+                                    <input type="email" id="email"
+                                        placeholder="Email*" required size="35"
+                                        data-error="Email is required">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <!-- Submit Button -->
+                                    <button type="submit" class="button">Sign
+                                        Up</button>
+                                    <!-- Success Message -->
+                                    <div id="msgSubmit"
+                                        class="text-center hidden"></div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6" style="text-align: center;">
+                            <h2 class="short-hr-left">OUR DETAILS</h2>
+                            <div id="contact-info">
+                                <ul>
+                                    <li></li>
+                                    <li><i class="fa fa-envelope"></i><p>Email:
+                                            <span class="colored"><a
+                                                    href="mailto:contact@egoexperiments.com">Contact@EgoExperiments.com</a></span></p></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                            <!-- Google Map -->
+                            <img src="images/logo.png"
+                                data-src="images/logo.png"
+                                class="img-fluid b-lazy" alt="video-thumbnail"
+                                style="
+                            padding: 5% 20%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- Main Container End -->
+        <!-- /// FOOTER /// -->
+        <footer id="main-footer">
+            <div id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p id="copyright">&copy; Ego Experiments Studios
+                                Ltd. <span id="year">
+                                </span></p><!-- Copyright Text -->
+                            <ul class="social-links">
+                                <!-- Social Media Icons -->
+                                <li><a href="https://x.com/EGOEXPERIMENTS"><i
+                                            class="fa fa-twitter  fa-lg icon-social"></i></a></li>
+                                <li><a
+                                        href="https://www.linkedin.com/company/ego-experiments-studios/"><i
+                                            class="fa fa-linkedin fa-lg icon-social"></i></a>
+                                    <li><a
+                                            href="https://www.instagram.com/ego.experiments/"><i
+                                                class="fa fa-instagram fa-lg icon-social"></i></a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><!-- Container End -->
+                    </div>
+                </footer><!-- Footer End -->
+
+                <!-- //// SCRIPTS //// -->
+                <script src="js/jquery-3.2.1.min.js"></script>
+                <script src="js/popper.min.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+                <script src="js/blazy.min.js"></script>
+                <script src="js/slide-bar.js"></script>
+                <script src="js/isotope.pkgd.min.js"></script>
+                <script src="js/lightbox.min.js"></script>
+                <script src="js/jquery-modal-video.min.js"></script>
+                <script src="js/validator.min.js"></script>
+                <script src="js/strider.js"></script>
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB64kJJiSynOc9ZqkNMOyl94cvsw5Z2uno"></script>
+            </body>
+        </html>
