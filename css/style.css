@@ -873,6 +873,7 @@ button {
 }
 .social-links li a {
     color: #FFF;
+    font-size: 2em;
 }
 .social-links li a:hover {
     color: #4f5267;
