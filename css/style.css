@@ -128,7 +128,7 @@ p {
     font-weight: bold;
 }
 .subtle {
-	color: #999;
+	color: #6c6c6c;
 }
 .spaced {
     letter-spacing: 5px;
@@ -186,7 +186,7 @@ hr {
 }
 .short-hr-left::after {
     border-top: 2px solid;
-    border-color: #4f5267;
+    border-color: #adadad;
     content: "";
     display: block;
     height: 1px;
@@ -195,7 +195,7 @@ hr {
 }
 .short-hr-center::after {
     border-top: 2px solid;
-    border-color: #4f5267;
+    border-color: #adadad;
     content: "";
     display: block;
     height: 1px;
