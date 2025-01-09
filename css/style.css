@@ -186,7 +186,7 @@ hr {
 }
 .short-hr-left::after {
     border-top: 2px solid;
-    border-color: #adadad;
+    border-color: #0070cc;
     content: "";
     display: block;
     height: 1px;
