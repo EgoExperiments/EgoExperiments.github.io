@@ -57,7 +57,7 @@ Primary Color: #4f5267;
 /* --------------------------- /////////// I. GENERAL /////////// --------------------------- */
 /* -Color- */
 .colored {
-    color: #4f5267;
+    color: #6c6c6c;
 }
 /* -Link Styling- */
 a {
@@ -175,7 +175,7 @@ ul {
 hr {
     width: 100%;
     height: 2px;
-    background: #4f5267;
+    background: linear-gradient(to right, #6C6C6C, #ADADAD);
     margin: 20px 0;
     border: none;
 }
