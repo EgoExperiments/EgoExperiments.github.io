@@ -392,7 +392,7 @@ button {
      width: 0px;
      height: 3px;
      position: relative;
-     background: #4f5267;  
+     background: linear-gradient(to right, #00439c, #0070cc);
 }
 /* -Hero Image Caption- */
 #hero-slider .carousel-caption {
