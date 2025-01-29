@@ -123,6 +123,7 @@ p {
     font-size: 0.9375rem; /* 15px */
     padding: 5px 5px 5px 0;
     margin: 0;
+    text-shadow: 1px 1px 1px rgb(0 0 0 / 85%);
 }
 .strong {
     font-weight: bold;
@@ -385,7 +386,7 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.15) !important;
 }
 /* -Progress Bar- */
 #progress-bar { 
