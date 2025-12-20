@@ -427,6 +427,9 @@ button {
     margin: 5%;
 }
 
+.partners {
+  margin-top: 2em;
+}
 .partner img {
   width: 100%;
   max-width: 420px;
