@@ -871,7 +871,8 @@ button {
 }
 /* --------------------------- /////////// X. FOOTER /////////// --------------------------- */
 #footer {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
     min-height: 70px;
     height: auto;
     background: #070707;
