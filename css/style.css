@@ -33,17 +33,17 @@ Content:	#FFF; (white)
 Footer:		#070707; (black)
 
 a (standard):	#F5F5F5; (white)
-a (hover): #4f5267; (orange)
-a (visited):	#4f5267;
-a (active):	#4f5267;
+a (hover): #76b900; (orange)
+a (visited):	#76b900;
+a (active):	#76b900;
 
 [Colors]
 
-Primary Color: #4f5267;
+Primary Color: #76b900;
 -------------------------------------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500'); /* Raleway Font */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans'); /* Open Sans Font */
+@import url('https://fonts.cdnfonts.com/css/dejavu-sans-mono'); /* DejaVu Sans Mono */
+
 @font-face {
     font-family: 'Anurati';
     src: url('../fonts/Anurati-Regular.otf');
@@ -62,7 +62,7 @@ Primary Color: #4f5267;
 /* -Link Styling- */
 a {
     color: #0070cc;
-    font-family: Raleway, sans-serif;
+    font-family: "DejaVu Sans Mono", "Courier New", monospace;
 	text-decoration: none;
 }
 a:visited {
@@ -70,15 +70,15 @@ a:visited {
     text-decoration: none;
 }
 a:hover {
-    color: #4f5267;
+    color: #76b900;
 	text-decoration: underline;
 }
 a:active {
-    color: #4f5267;
+    color: #76b900;
     text-decoration: underline;
 }
 a:focus {
-    color: #4f5267;
+    color: #76b900;
     text-decoration: none;
 }
 /* -Resets- */
@@ -98,7 +98,7 @@ html, body {
 }
 /* -Text Styling */
 h1,h2,h3,h4,h5,h6 {
-	font-family: Raleway, sans-serif;
+	font-family: "DejaVu Sans Mono", "Courier New", monospace;
 }
 h1 {
     font-size: 2.25rem; /* 36px */
@@ -118,7 +118,7 @@ h4 {
     font-weight: 300;
 }
 p {
-    font-family: Raleway, sans-serif;
+    font-family: "DejaVu Sans Mono", "Courier New", monospace;
     font-size: 0.9375rem; /* 15px */
     padding: 5px 5px 5px 0;
     margin: 0;
@@ -233,7 +233,7 @@ button {
     border: none;
     border-radius: 2px;
     color: #FFF;
-    font-family: Raleway, sans-serif;
+    font-family: "DejaVu Sans Mono", "Courier New", monospace;
     font-weight: 500;
 	display: block;
 	height: auto;
@@ -254,7 +254,7 @@ button {
 /* --------------------------- /////////// II. PAGE PRELOADER /////////// --------------------------- */
 /* -Loading Screen- */
 #loader-wrapper {
-    background: #111;
+    background: #0b0b0b;
     height: 100%;
     width: 100%;
     position: fixed;
@@ -273,7 +273,7 @@ button {
 #progress {
     width: 0;
     height: 2px;
-    background: #4f5267;
+    background: #76b900;
     position: relative;
     top: 45%;
 }
@@ -322,13 +322,13 @@ button {
     font-family: Disoriented, sans-serif;
 }
 .navbar-dark .navbar-nav .nav-link:hover {
-    color: #4f5267;
+    color: #76b900;
 }
 .navbar-dark .navbar-nav .nav-link:active {
-    color: #4f5267;
+    color: #76b900;
 }
 .navbar-dark .navbar-nav .nav-link:focus {
-    color: #4f5267;
+    color: #76b900;
 }
 .navbar-toggler {
     border: none;
@@ -405,7 +405,7 @@ button {
 }
 #hero-slider h1,
 #hero-slider h2 {
-    font-family: Raleway, sans-serif;
+    font-family: "DejaVu Sans Mono", "Courier New", monospace;
     font-weight: 600;
     text-shadow: 1px 1px 1px rgb(0 0 0 / 85%);
 }
@@ -448,12 +448,12 @@ button {
 .game-tags {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
     padding: 10px;
-    border-left: 2px solid #4f5267;
+    border-left: 2px solid #76b900;
 }
 .game-tags li {
     display: inline;
     margin: 0 0 0 15px;
-    font-family: Raleway, sans-serif;
+    font-family: "DejaVu Sans Mono", "Courier New", monospace;
     font-size:1.10rem; /* 20px */;
     font-weight: 500;
 }
@@ -462,10 +462,10 @@ button {
     text-decoration: none;
 }
 .game-tags li a:hover {
-    color: #4f5267;
+    color: #76b900;
 }
 .game-tags li a:focus {
-    color: #4f5267;
+    color: #76b900;
 }
 .game-card {
     width: 100%;
@@ -474,14 +474,14 @@ button {
     height: auto;
 }
 .lightbox .lb-image {
-    border: 4px solid #111;
+    border: 4px solid #0b0b0b;
 }
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
-    border-left: 2px solid #4f5267;
+    border-left: 2px solid #76b900;
     width: 100%;
     height: 100%;
     opacity: 0;
@@ -558,7 +558,7 @@ button {
     border-radius: 3px;
     padding: 8px;
     border: none;
-    color: #111;
+    color: #0b0b0b;
     cursor: pointer;
     transition: 0.2s;
 }
@@ -581,7 +581,7 @@ button {
     padding: 5px 22px;
     border-radius: 5px;
     margin: 30px 10px 0 0;
-    color: #111;
+    color: #0b0b0b;
     background: #DDD;
     border: none;
     cursor: pointer;
@@ -636,7 +636,7 @@ button {
     background: #FFF;
 }
 .score-card:hover p {
-    color: #111;
+    color: #0b0b0b;
 }
 .score-card p:nth-of-type(2) {
     font-size: 14px;
@@ -680,7 +680,7 @@ button {
 }
 #team figure img {
     border-radius: 3px;
-    border-bottom: 2px solid #4f5267;
+    border-bottom: 2px solid #76b900;
 }
 .team-caption ul {
     margin-top: 10px;
@@ -693,7 +693,7 @@ button {
     color: #EEE;
 }
 .team-caption ul li > a:hover {
-    color: #4f5267;
+    color: #76b900;
 }
 .team-caption {
     position: absolute;
@@ -733,7 +733,7 @@ button {
 .job-card {
     text-align: center;
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-    border-left: 2px solid #4f5267;
+    border-left: 2px solid #76b900;
     padding: 25px 35px;
     margin: 10px 0;
 }
@@ -741,7 +741,7 @@ button {
     background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
 }
 .modal-header {
-    border-bottom: 1px solid #4f5267;
+    border-bottom: 1px solid #76b900;
 }
 .modal-body > ul > li > p {
     padding: 0px 5px;
@@ -756,7 +756,7 @@ button {
 }
 .modal-body ul li:before {
     content: "\f101";
-    color: #4f5267;
+    color: #76b900;
     display: inline-block;
     width: 1em;
     margin-left: -10px;
@@ -769,7 +769,7 @@ button {
     display: inline-block;
     padding: 5px 15px 7px 15px;
     margin: 5px 5px;
-    border: 1px solid #4f5267;
+    border: 1px solid #76b900;
     border-radius: 20px;
 }
 .modal-body .skill-list li:before {
@@ -779,7 +779,7 @@ button {
     margin-bottom: 0;
 }
 .modal-footer {
-    border-top: 1px solid #4f5267;
+    border-top: 1px solid #76b900;
 }
 .modal-footer button {
     margin: 0;
@@ -797,7 +797,7 @@ button {
     cursor: pointer;
 }
 .close:hover {
-    color: #4f5267;
+    color: #76b900;
     opacity: 1;
 }
 /* -- Newsletter -- */
@@ -826,7 +826,7 @@ button {
     width: 100%;
     color: #FFF;
     background: none;
-    border-bottom: 2px solid #4f5267 !important;
+    border-bottom: 2px solid #76b900 !important;
     border-left: none !important;
     border-right: none !important;
     border-top: none !important;
@@ -836,7 +836,7 @@ button {
     width: 100%;
     color: #FFF;
     background: none;
-    border-bottom: 2px solid #4f5267 !important;
+    border-bottom: 2px solid #76b900 !important;
     border-left: none !important;
     border-right: none !important;
     border-top: none !important;
@@ -849,7 +849,7 @@ button {
 }
 /* - Warning and succes msg text- */
 .text-danger, .text-success {
-    font-family: Open Sans, sans-serif;
+    font-family: "DejaVu Sans Mono", "Courier New", monospace;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1.25rem;
@@ -858,7 +858,7 @@ button {
     margin-top: 25px;
 }
 #contact ul li i {
-    color: #4f5267;
+    color: #76b900;
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
     padding: 10px;
 }
@@ -881,7 +881,7 @@ button {
     min-height: 70px;
     height: auto;
     background: #070707;
-    border-top: 2px solid #4f5267;
+    border-top: 2px solid #76b900;
     padding: 20px 0 0 0;
 }
 .social-links {
@@ -896,10 +896,10 @@ button {
     font-size: 2em;
 }
 .social-links li a:hover {
-    color: #4f5267;
+    color: #76b900;
 }
 .social-links li a:focus {
-    color: #4f5267;
+    color: #76b900;
 }
 #copyright {
     float: left;
@@ -927,7 +927,7 @@ button {
 /* --------------------------- /////////// XII. RESPONSIVE STYLES /////////// --------------------------- */
 @media (max-width : 991px) {
     .nav-item > a::first-letter {
-    color: #4f5267;
+    color: #76b900;
     }
     .navbar-dark {
         background-color: rgba(0,0,0,0.4); /* navbar background gradient */
