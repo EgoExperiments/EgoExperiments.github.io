@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.*
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build artifacts
+*.min.css.map
+*.min.js.map
