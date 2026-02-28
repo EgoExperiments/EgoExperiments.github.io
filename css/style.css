@@ -33,13 +33,13 @@ Content:	#FFF; (white)
 Footer:		#070707; (black)
 
 a (standard):	#F5F5F5; (white)
-a (hover): #76b900; (orange)
-a (visited):	#76b900;
-a (active):	#76b900;
+a (hover): #0070cc; (orange)
+a (visited):	#0070cc;
+a (active):	#0070cc;
 
 [Colors]
 
-Primary Color: #76b900;
+Primary Color: #0070cc;
 -------------------------------------------------------------------*/
 
 @import url('https://fonts.cdnfonts.com/css/dejavu-sans-mono'); /* DejaVu Sans Mono */
@@ -70,15 +70,15 @@ a:visited {
     text-decoration: none;
 }
 a:hover {
-    color: #76b900;
+    color: #0070cc;
 	text-decoration: underline;
 }
 a:active {
-    color: #76b900;
+    color: #0070cc;
     text-decoration: underline;
 }
 a:focus {
-    color: #76b900;
+    color: #0070cc;
     text-decoration: none;
 }
 /* -Resets- */
@@ -273,7 +273,7 @@ button {
 #progress {
     width: 0;
     height: 2px;
-    background: #76b900;
+    background: #0070cc;
     position: relative;
     top: 45%;
 }
@@ -322,13 +322,13 @@ button {
     font-family: Disoriented, sans-serif;
 }
 .navbar-dark .navbar-nav .nav-link:hover {
-    color: #76b900;
+    color: #0070cc;
 }
 .navbar-dark .navbar-nav .nav-link:active {
-    color: #76b900;
+    color: #0070cc;
 }
 .navbar-dark .navbar-nav .nav-link:focus {
-    color: #76b900;
+    color: #0070cc;
 }
 .navbar-toggler {
     border: none;
@@ -448,7 +448,7 @@ button {
 .game-tags {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
     padding: 10px;
-    border-left: 2px solid #76b900;
+    border-left: 2px solid #0070cc;
 }
 .game-tags li {
     display: inline;
@@ -462,10 +462,10 @@ button {
     text-decoration: none;
 }
 .game-tags li a:hover {
-    color: #76b900;
+    color: #0070cc;
 }
 .game-tags li a:focus {
-    color: #76b900;
+    color: #0070cc;
 }
 .game-card {
     width: 100%;
@@ -481,7 +481,7 @@ button {
     top: 0;
     left: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
-    border-left: 2px solid #76b900;
+    border-left: 2px solid #0070cc;
     width: 100%;
     height: 100%;
     opacity: 0;
@@ -680,7 +680,7 @@ button {
 }
 #team figure img {
     border-radius: 3px;
-    border-bottom: 2px solid #76b900;
+    border-bottom: 2px solid #0070cc;
 }
 .team-caption ul {
     margin-top: 10px;
@@ -693,7 +693,7 @@ button {
     color: #EEE;
 }
 .team-caption ul li > a:hover {
-    color: #76b900;
+    color: #0070cc;
 }
 .team-caption {
     position: absolute;
@@ -733,7 +733,7 @@ button {
 .job-card {
     text-align: center;
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-    border-left: 2px solid #76b900;
+    border-left: 2px solid #0070cc;
     padding: 25px 35px;
     margin: 10px 0;
 }
@@ -741,7 +741,7 @@ button {
     background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
 }
 .modal-header {
-    border-bottom: 1px solid #76b900;
+    border-bottom: 1px solid #0070cc;
 }
 .modal-body > ul > li > p {
     padding: 0px 5px;
@@ -756,7 +756,7 @@ button {
 }
 .modal-body ul li:before {
     content: "\f101";
-    color: #76b900;
+    color: #0070cc;
     display: inline-block;
     width: 1em;
     margin-left: -10px;
@@ -769,7 +769,7 @@ button {
     display: inline-block;
     padding: 5px 15px 7px 15px;
     margin: 5px 5px;
-    border: 1px solid #76b900;
+    border: 1px solid #0070cc;
     border-radius: 20px;
 }
 .modal-body .skill-list li:before {
@@ -779,7 +779,7 @@ button {
     margin-bottom: 0;
 }
 .modal-footer {
-    border-top: 1px solid #76b900;
+    border-top: 1px solid #0070cc;
 }
 .modal-footer button {
     margin: 0;
@@ -797,7 +797,7 @@ button {
     cursor: pointer;
 }
 .close:hover {
-    color: #76b900;
+    color: #0070cc;
     opacity: 1;
 }
 /* -- Newsletter -- */
@@ -826,7 +826,7 @@ button {
     width: 100%;
     color: #FFF;
     background: none;
-    border-bottom: 2px solid #76b900 !important;
+    border-bottom: 2px solid #0070cc !important;
     border-left: none !important;
     border-right: none !important;
     border-top: none !important;
@@ -836,7 +836,7 @@ button {
     width: 100%;
     color: #FFF;
     background: none;
-    border-bottom: 2px solid #76b900 !important;
+    border-bottom: 2px solid #0070cc !important;
     border-left: none !important;
     border-right: none !important;
     border-top: none !important;
@@ -858,7 +858,7 @@ button {
     margin-top: 25px;
 }
 #contact ul li i {
-    color: #76b900;
+    color: #0070cc;
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
     padding: 10px;
 }
@@ -881,7 +881,7 @@ button {
     min-height: 70px;
     height: auto;
     background: #070707;
-    border-top: 2px solid #76b900;
+    border-top: 2px solid #0070cc;
     padding: 20px 0 0 0;
 }
 .social-links {
@@ -896,10 +896,10 @@ button {
     font-size: 2em;
 }
 .social-links li a:hover {
-    color: #76b900;
+    color: #0070cc;
 }
 .social-links li a:focus {
-    color: #76b900;
+    color: #0070cc;
 }
 #copyright {
     float: left;
@@ -927,7 +927,7 @@ button {
 /* --------------------------- /////////// XII. RESPONSIVE STYLES /////////// --------------------------- */
 @media (max-width : 991px) {
     .nav-item > a::first-letter {
-    color: #76b900;
+    color: #0070cc;
     }
     .navbar-dark {
         background-color: rgba(0,0,0,0.4); /* navbar background gradient */
