@@ -363,6 +363,7 @@ section {
   visibility: visible;
 }
 
+
 .section-title::before {
   content: '';
   position: absolute;
@@ -375,6 +376,20 @@ section {
 }
 
 /* --- About --- */
+#about {
+  position: relative;
+}
+
+#about::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../images/ABOUT.jpg') center / cover no-repeat;
+  opacity: 0.035;
+  filter: grayscale(100%);
+  pointer-events: none;
+}
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -410,6 +425,138 @@ section {
 .credential-badge:hover {
   border-color: var(--blue-dim);
   color: var(--text);
+}
+
+/* --- Credential Logo Strip --- */
+.cred-strip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 0;
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.cred-logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+}
+
+.cred-nvidia {
+  height: 4rem;
+}
+
+/* --- Ecosystem Cards --- */
+.eco-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.eco-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.eco-card:hover {
+  background: rgba(0, 112, 204, 0.04);
+}
+
+.eco-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 112, 204, 0.06), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.eco-card:hover::before {
+  left: 100%;
+}
+
+.eco-prefix {
+  color: var(--blue);
+  opacity: 0.4;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  flex-shrink: 0;
+}
+
+.eco-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.eco-name {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--text);
+  letter-spacing: 0.05em;
+}
+
+.eco-desc {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  letter-spacing: 0.03em;
+}
+
+.eco-arrow {
+  color: var(--blue);
+  opacity: 0.4;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.eco-card:hover .eco-arrow {
+  transform: translateX(4px);
+  opacity: 0.8;
+}
+
+.section-rule {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  margin-top: 2rem;
+}
+
+/* Section divider glyph */
+.section-glyph {
+  display: block;
+  width: 28px;
+  height: auto;
+  margin: 3rem auto;
+  opacity: 0.08;
+  user-select: none;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.legal-note {
+  font-family: var(--font-body);
+  font-size: 0.48rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin-top: 1rem;
+  opacity: 0.5;
+  line-height: 1.6;
 }
 
 /* --- Credential Terminal --- */
@@ -612,7 +759,51 @@ section {
   line-height: 1.5;
 }
 
+/* --- Divisions --- */
+#divisions {
+  position: relative;
+}
+
+#divisions::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../images/DIVISION_0.jpg') center / cover no-repeat;
+  opacity: 0.04;
+  filter: grayscale(100%);
+  pointer-events: none;
+}
+
+/* --- Ecosystem --- */
+#ecosystem {
+  position: relative;
+}
+
+#ecosystem::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../images/ECOSYSTEM_0.jpg') center / cover no-repeat;
+  opacity: 0.04;
+  filter: grayscale(100%);
+  pointer-events: none;
+}
+
 /* --- Capabilities --- */
+#capabilities {
+  position: relative;
+}
+
+#capabilities::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../images/CAPABILITIES_0.jpg') center / cover no-repeat;
+  opacity: 0.07;
+  filter: grayscale(100%);
+  pointer-events: none;
+}
+
 .cap-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -667,16 +858,15 @@ section {
 }
 
 .intel-section::before {
-  content: 'ICC-SANITIZED';
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(-30deg);
-  font-family: var(--font-heading);
-  font-size: clamp(4rem, 12vw, 10rem);
-  letter-spacing: 0.3em;
-  color: rgba(255, 255, 255, 0.02);
-  white-space: nowrap;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  width: clamp(250px, 50vw, 500px);
+  height: clamp(250px, 50vw, 500px);
+  background: url('../images/ICC-SANITIZED-W.png') center / contain no-repeat;
+  opacity: 0.03;
   pointer-events: none;
   user-select: none;
 }
@@ -777,6 +967,12 @@ footer {
 
 .footer-bottom span {
   opacity: 0.6;
+}
+
+.footer-compliance {
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+  opacity: 0.4;
 }
 
 /* --- 404 --- */

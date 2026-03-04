@@ -7,10 +7,11 @@ const ARC_COUNT = 7;
 const ROTATION_SPEED = 0.0008;
 const ATMOSPHERE_SCALE = 1.025;
 
-// PlayStation blues
+// PlayStation blues + NVIDIA green accent
 const BLUE_LIGHT = new THREE.Color(0x0070cc);
 const BLUE_DARK = new THREE.Color(0x00439C);
 const BLUE_GLOW = new THREE.Color(0x0090ff);
+const NVIDIA_GREEN = new THREE.Color(0x76b900);
 
 // Operational node positions [lat, lng] — approximate
 const NODES = [
@@ -125,16 +126,23 @@ function createPointCloud() {
       positions[idx * 3 + 1] = pos.y;
       positions[idx * 3 + 2] = pos.z;
 
-      // Gradient: dark blue at poles → light blue at equator
-      const latNorm = Math.abs(lat) / 90;
-      const mix = 1 - latNorm;
-      const cr = mix * 0.0 + (1 - mix) * 0.0;
-      const cg = mix * 0.44 + (1 - mix) * 0.26;
-      const cb = mix * 0.8 + (1 - mix) * 0.61;
+      // Gradient: dark blue at poles → light blue at equator, with NVIDIA green accents
       const brightness = 0.5 + Math.random() * 0.5;
-      colors[idx * 3] = cr * brightness;
-      colors[idx * 3 + 1] = cg * brightness;
-      colors[idx * 3 + 2] = cb * brightness;
+      if (Math.random() < 0.08) {
+        // ~8% of points get NVIDIA green
+        colors[idx * 3] = 0.46 * brightness;
+        colors[idx * 3 + 1] = 0.72 * brightness;
+        colors[idx * 3 + 2] = 0.0 * brightness;
+      } else {
+        const latNorm = Math.abs(lat) / 90;
+        const mix = 1 - latNorm;
+        const cr = mix * 0.0 + (1 - mix) * 0.0;
+        const cg = mix * 0.44 + (1 - mix) * 0.26;
+        const cb = mix * 0.8 + (1 - mix) * 0.61;
+        colors[idx * 3] = cr * brightness;
+        colors[idx * 3 + 1] = cg * brightness;
+        colors[idx * 3 + 2] = cb * brightness;
+      }
 
       sizes[idx] = 1.5 + Math.random() * 1.5;
       idx++;
@@ -306,6 +314,10 @@ export function initGlobe(container) {
   const rimLight = new THREE.PointLight(0x00439C, 0.6, 8);
   rimLight.position.set(-3, 1, -2);
   scene.add(rimLight);
+
+  const greenRim = new THREE.PointLight(0x76b900, 0.2, 6);
+  greenRim.position.set(2, -1.5, 1);
+  scene.add(greenRim);
 
   // Objects
   globe = createGlobe();
