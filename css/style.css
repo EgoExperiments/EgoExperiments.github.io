@@ -23,6 +23,7 @@
 /* --- CSS Variables --- */
 :root {
   --blue: #0070cc;
+  --blue-dark: #00439C;
   --blue-dim: rgba(0, 112, 204, 0.15);
   --blue-glow: rgba(0, 112, 204, 0.4);
   --industrial: #333a41;
@@ -411,6 +412,129 @@ section {
   color: var(--text);
 }
 
+/* --- Credential Terminal --- */
+.cred-terminal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+}
+
+.cred-line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cred-line.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scan-line hover */
+.cred-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 112, 204, 0.06), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.cred-line:hover::before {
+  left: 100%;
+}
+
+/* Cascading glow pulse */
+.cred-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--blue), var(--blue-dark), var(--blue));
+  background-size: 100% 200%;
+  opacity: 0;
+  animation: cred-pulse 4s ease-in-out infinite, cred-gradient-shift 2s ease-in-out infinite;
+}
+
+.cred-line:nth-child(1)::after { animation-delay: 0s, 0s; }
+.cred-line:nth-child(2)::after { animation-delay: 0.4s, 0.2s; }
+.cred-line:nth-child(3)::after { animation-delay: 0.8s, 0.4s; }
+.cred-line:nth-child(4)::after { animation-delay: 1.2s, 0.6s; }
+.cred-line:nth-child(5)::after { animation-delay: 1.6s, 0.8s; }
+.cred-line:nth-child(6)::after { animation-delay: 2.0s, 1.0s; }
+.cred-line:nth-child(7)::after { animation-delay: 2.4s, 1.2s; }
+.cred-line:nth-child(8)::after { animation-delay: 2.8s, 1.4s; }
+.cred-line:nth-child(9)::after { animation-delay: 3.2s, 1.6s; }
+
+@keyframes cred-pulse {
+  0%, 100% { opacity: 0; box-shadow: none; }
+  15%, 25% { opacity: 1; box-shadow: 0 0 12px rgba(0, 112, 204, 0.5), 6px 0 24px rgba(0, 67, 156, 0.3); }
+}
+
+@keyframes cred-gradient-shift {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 0% 100%; }
+}
+
+.cred-line:hover {
+  background: rgba(0, 112, 204, 0.04);
+}
+
+.cred-prefix {
+  color: var(--blue);
+  opacity: 0.4;
+  font-size: 0.65rem;
+  flex-shrink: 0;
+}
+
+.cred-name {
+  color: var(--text);
+  letter-spacing: 0.08em;
+  flex: 1;
+}
+
+.cred-status {
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  color: var(--blue);
+  opacity: 0.5;
+  flex-shrink: 0;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.cred-status::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--blue);
+  animation: status-blink 2s ease-in-out infinite;
+}
+
+@keyframes status-blink {
+  0%, 100% { opacity: 0.3; background: var(--blue-dark); box-shadow: 0 0 3px var(--blue-dark); }
+  50% { opacity: 1; background: var(--blue); box-shadow: 0 0 8px var(--blue-glow); }
+}
+
 /* Stats bar */
 .stats-bar {
   display: flex;
@@ -753,6 +877,10 @@ footer {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
+  }
+
+  .cred-terminal {
+    grid-template-columns: 1fr;
   }
 
   .hero-title {

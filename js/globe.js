@@ -2,10 +2,15 @@ import * as THREE from 'three';
 
 // --- Configuration ---
 const GLOBE_RADIUS = 1;
-const POINT_COUNT = 8000;
+const POINT_COUNT = 10000;
 const ARC_COUNT = 7;
 const ROTATION_SPEED = 0.0008;
-const ATMOSPHERE_SCALE = 1.02;
+const ATMOSPHERE_SCALE = 1.025;
+
+// PlayStation blues
+const BLUE_LIGHT = new THREE.Color(0x0070cc);
+const BLUE_DARK = new THREE.Color(0x00439C);
+const BLUE_GLOW = new THREE.Color(0x0090ff);
 
 // Operational node positions [lat, lng] — approximate
 const NODES = [
@@ -41,23 +46,42 @@ function latLngToVec3(lat, lng, radius) {
 function createGlobe() {
   const geometry = new THREE.SphereGeometry(GLOBE_RADIUS, 64, 64);
   const material = new THREE.MeshBasicMaterial({
-    color: 0x0070cc,
+    color: BLUE_DARK,
     wireframe: true,
     transparent: true,
-    opacity: 0.08,
+    opacity: 0.1,
   });
-  return new THREE.Mesh(geometry, material);
+  const mesh = new THREE.Mesh(geometry, material);
+  mesh.userData.material = material;
+  return mesh;
 }
 
 function createAtmosphere() {
-  const geometry = new THREE.SphereGeometry(GLOBE_RADIUS * ATMOSPHERE_SCALE, 64, 64);
-  const material = new THREE.MeshBasicMaterial({
-    color: 0x0070cc,
+  // Inner atmosphere
+  const geo1 = new THREE.SphereGeometry(GLOBE_RADIUS * ATMOSPHERE_SCALE, 64, 64);
+  const mat1 = new THREE.MeshBasicMaterial({
+    color: BLUE_LIGHT,
     wireframe: true,
     transparent: true,
     opacity: 0.03,
   });
-  return new THREE.Mesh(geometry, material);
+  const inner = new THREE.Mesh(geo1, mat1);
+
+  // Outer glow shell
+  const geo2 = new THREE.SphereGeometry(GLOBE_RADIUS * 1.06, 32, 32);
+  const mat2 = new THREE.MeshBasicMaterial({
+    color: BLUE_DARK,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.015,
+  });
+  const outer = new THREE.Mesh(geo2, mat2);
+
+  const group = new THREE.Group();
+  group.add(inner, outer);
+  group.userData.innerMat = mat1;
+  group.userData.outerMat = mat2;
+  return group;
 }
 
 function createPointCloud() {
@@ -101,11 +125,16 @@ function createPointCloud() {
       positions[idx * 3 + 1] = pos.y;
       positions[idx * 3 + 2] = pos.z;
 
-      // Blue tint with slight variation
-      const brightness = 0.4 + Math.random() * 0.6;
-      colors[idx * 3] = 0.0 * brightness;
-      colors[idx * 3 + 1] = 0.44 * brightness;
-      colors[idx * 3 + 2] = 0.8 * brightness;
+      // Gradient: dark blue at poles → light blue at equator
+      const latNorm = Math.abs(lat) / 90;
+      const mix = 1 - latNorm;
+      const cr = mix * 0.0 + (1 - mix) * 0.0;
+      const cg = mix * 0.44 + (1 - mix) * 0.26;
+      const cb = mix * 0.8 + (1 - mix) * 0.61;
+      const brightness = 0.5 + Math.random() * 0.5;
+      colors[idx * 3] = cr * brightness;
+      colors[idx * 3 + 1] = cg * brightness;
+      colors[idx * 3 + 2] = cb * brightness;
 
       sizes[idx] = 1.5 + Math.random() * 1.5;
       idx++;
@@ -167,10 +196,11 @@ function createArcs() {
     const points = curve.getPoints(50);
     const geometry = new THREE.BufferGeometry().setFromPoints(points);
 
+    const arcColor = i % 2 === 0 ? BLUE_LIGHT : BLUE_DARK;
     const material = new THREE.LineDashedMaterial({
-      color: 0x0070cc,
+      color: arcColor,
       transparent: true,
-      opacity: 0.5,
+      opacity: 0.6,
       dashSize: 0.03,
       gapSize: 0.02,
       linewidth: 1,
@@ -266,12 +296,16 @@ export function initGlobe(container) {
   container.appendChild(renderer.domElement);
 
   // Lighting
-  const ambientLight = new THREE.AmbientLight(0x111111);
+  const ambientLight = new THREE.AmbientLight(0x0a0a14);
   scene.add(ambientLight);
 
-  const pointLight = new THREE.PointLight(0x0070cc, 1.2, 10);
+  const pointLight = new THREE.PointLight(0x0070cc, 1.0, 10);
   pointLight.position.copy(camera.position);
   scene.add(pointLight);
+
+  const rimLight = new THREE.PointLight(0x00439C, 0.6, 8);
+  rimLight.position.set(-3, 1, -2);
+  scene.add(rimLight);
 
   // Objects
   globe = createGlobe();
@@ -321,6 +355,24 @@ export function initGlobe(container) {
     camera.position.x += (mouseX - camera.position.x) * 0.02;
     camera.position.y += (-mouseY - camera.position.y) * 0.02;
     camera.lookAt(scene.position);
+
+    // Breathe — wireframe pulses between dark and light blue
+    const breathe = Math.sin(Date.now() * 0.0008) * 0.5 + 0.5; // 0-1 oscillation
+    if (globe.userData.material) {
+      globe.userData.material.color.lerpColors(BLUE_DARK, BLUE_LIGHT, breathe);
+      globe.userData.material.opacity = 0.07 + breathe * 0.06;
+    }
+
+    // Atmosphere breathe
+    if (atmosphere.userData && atmosphere.userData.innerMat) {
+      atmosphere.userData.innerMat.opacity = 0.02 + breathe * 0.03;
+      atmosphere.userData.outerMat.opacity = 0.01 + (1 - breathe) * 0.02;
+    }
+
+    // Point cloud shimmer — subtle size oscillation
+    if (pointCloud.material) {
+      pointCloud.material.opacity = 0.6 + breathe * 0.2;
+    }
 
     // Animate arc dash offsets
     arcs.children.forEach((child) => {
