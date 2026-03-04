@@ -718,48 +718,6 @@ section {
 }
 
 /* --- Divisions --- */
-.division-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.division-card {
-  background: var(--dark);
-  padding: 2rem;
-  border-left: 2px solid transparent;
-  transition: border-color 0.3s, background 0.3s;
-}
-
-.division-card:hover {
-  border-left-color: var(--blue);
-  background: rgba(0, 112, 204, 0.03);
-}
-
-.division-icon {
-  font-size: 1.2rem;
-  color: var(--blue);
-  margin-bottom: 0.8rem;
-  opacity: 0.7;
-}
-
-.division-name {
-  font-family: var(--font-heading);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-
-  color: var(--white);
-  margin-bottom: 0.5rem;
-}
-
-.division-desc {
-  font-size: 0.72rem;
-  color: var(--text-dim);
-  line-height: 1.5;
-}
-
-/* --- Divisions --- */
 #divisions {
   position: relative;
 }
@@ -1021,9 +979,6 @@ footer {
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
-  .division-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .cap-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1040,9 +995,6 @@ footer {
 
   section { padding: 4rem 1.5rem; }
 
-  .division-grid {
-    grid-template-columns: 1fr;
-  }
 
   .cap-grid {
     grid-template-columns: 1fr;
