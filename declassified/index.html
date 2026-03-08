@@ -64,7 +64,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  animation: bg-breathe 30s ease-in-out infinite;
+  animation: bg-breathe 9.6s ease-in-out infinite;
   font-family: var(--body);
   font-size: 14px;
   line-height: 1.85;
@@ -144,7 +144,7 @@ nav {
   content: '';
   width: 5px; height: 5px; border-radius: 50%;
   background: var(--red);
-  animation: blink-red 2s step-end infinite;
+  animation: blink-red 0.6s step-end infinite;
 }
 @keyframes blink-red { 0%,100%{opacity:1} 50%{opacity:0.2} }
 .nav-links { display: flex; gap: 24px; }
@@ -174,7 +174,7 @@ main {
   max-width: 680px; margin: 0 auto;
   padding: 100px 28px 80px;
   position: relative;
-  animation: tracking-error 22s ease-in-out infinite, screen-roll 45s ease-in-out infinite;
+  animation: tracking-error 7.0s ease-in-out infinite, screen-roll 14.4s ease-in-out infinite;
 }
 
 /* ICC Watermark behind content */
@@ -209,7 +209,7 @@ main {
   display: block; margin: 0 auto 28px;
   opacity: 0.45;
   filter: sepia(0.3) hue-rotate(20deg);
-  animation: logo-flicker 8s ease-in-out infinite;
+  animation: logo-flicker 2.6s ease-in-out infinite;
 }
 @keyframes logo-flicker {
   0%,90%,100% { opacity: 0.45; }
@@ -264,7 +264,7 @@ main {
   margin-bottom: 32px;
   position: relative;
 }
-.doc-title.glitch { animation: glitch-title 9s ease-in-out infinite, glitch-title-2 17s ease-in-out infinite; }
+.doc-title.glitch { animation: glitch-title 2.9s ease-in-out infinite, glitch-title-2 5.4s ease-in-out infinite; }
 
 @keyframes glitch-title {
   0%,78%,100% { text-shadow:none; transform:none; filter:none; }
@@ -288,7 +288,7 @@ p {
   font-size: 13px; line-height: 1.9;
   color: var(--text); margin-bottom: 16px;
   text-shadow: 0.4px 0 rgba(255,80,80,0.08), -0.4px 0 rgba(0,200,255,0.06);
-  animation: text-ghost 18s ease-in-out infinite;
+  animation: text-ghost 5.8s ease-in-out infinite;
 }
 @keyframes text-ghost {
   0%,93%,100% { text-shadow: 0.4px 0 rgba(255,80,80,0.08), -0.4px 0 rgba(0,200,255,0.06); }
@@ -300,7 +300,7 @@ p.secondary {
   font-family: var(--mono);
   font-size: 11px; color: var(--muted); line-height: 1.8;
   text-shadow: 0.3px 0 rgba(255,80,80,0.06);
-  animation: text-ghost-secondary 25s ease-in-out infinite;
+  animation: text-ghost-secondary 8.0s ease-in-out infinite;
 }
 @keyframes text-ghost-secondary {
   0%,90%,100% { text-shadow: 0.3px 0 rgba(255,80,80,0.06); }
@@ -431,7 +431,7 @@ strong { color: #d0d8d0; font-weight: 700; }
   font-size: 8px; letter-spacing: 6px;
   color: rgba(180,180,180,0.04);
   text-transform: uppercase;
-  animation: ty-pulse 20s ease-in-out infinite;
+  animation: ty-pulse 6.4s ease-in-out infinite;
 }
 @keyframes ty-pulse {
   0%,70%,100% { color: rgba(180,180,180,0.04); }
@@ -469,7 +469,7 @@ a:hover { color: rgba(100,140,200,0.9); }
 .reveal {
   opacity: 0;
   transform: translateY(8px);
-  animation: reveal-in 0.6s ease forwards;
+  animation: reveal-in 0.30s ease forwards;
 }
 @keyframes reveal-in {
   to { opacity: 1; transform: translateY(0); }
@@ -494,7 +494,7 @@ a:hover { color: rgba(100,140,200,0.9); }
   color: rgba(0,0,0,0.8); text-transform: uppercase;
   z-index: 999; pointer-events: none;
   opacity: 0;
-  animation: interference-flash 40s ease-in-out infinite;
+  animation: interference-flash 12.8s ease-in-out infinite;
 }
 @keyframes interference-flash {
   0%,94%,100% { opacity:0; transform:scaleY(0); }
@@ -510,7 +510,7 @@ a:hover { color: rgba(100,140,200,0.9); }
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E");
   background-size: 512px;
   mix-blend-mode: screen;
-  animation: static-burst 60s ease-in-out infinite;
+  animation: static-burst 19.2s ease-in-out infinite;
 }
 @keyframes static-burst {
   0%,88%,100% { opacity:0; }
@@ -521,7 +521,7 @@ a:hover { color: rgba(100,140,200,0.9); }
 }
 
 /* ── SECTION LABEL FLICKER ─────────────────────────── */
-.sec-label { animation: label-flicker 20s ease-in-out infinite; }
+.sec-label { animation: label-flicker 6.4s ease-in-out infinite; }
 @keyframes label-flicker {
   0%,96%,100% { opacity:1; }
   97% { opacity:0.4; }
@@ -604,14 +604,14 @@ a:hover { color: rgba(100,140,200,0.9); }
   font-family: var(--mono); font-size: 8px; letter-spacing: 2px;
   color: rgba(180,30,30,0.5);
   pointer-events: none; z-index: 200;
-  animation: rec-blink 1.8s step-end infinite;
+  animation: rec-blink 0.6s step-end infinite;
 }
 #rec-indicator::before {
   content: '';
   width: 6px; height: 6px; border-radius: 50%;
   background: rgba(220,40,40,0.7);
   box-shadow: 0 0 6px rgba(220,40,40,0.4);
-  animation: rec-blink 1.8s step-end infinite;
+  animation: rec-blink 0.6s step-end infinite;
 }
 @keyframes rec-blink { 0%,100%{opacity:1} 50%{opacity:0.1} }
 
@@ -668,7 +668,7 @@ p strong { text-shadow: 0 0 6px rgba(200,180,140,0.2); }
   position: absolute; top: 0; left: 0;
   color: rgba(255,80,80,0.08);
   font-size: inherit; letter-spacing: inherit;
-  animation: label-corrupt 30s ease-in-out infinite;
+  animation: label-corrupt 9.6s ease-in-out infinite;
   pointer-events: none;
   transform: translateX(1px);
 }
@@ -687,7 +687,7 @@ p strong { text-shadow: 0 0 6px rgba(200,180,140,0.2); }
   position: absolute; top:0; left:0;
   color: rgba(255,40,40,0.12);
   transform: translateX(-2px) translateY(1px);
-  animation: title-ghost-layer 8s ease-in-out infinite;
+  animation: title-ghost-layer 2.6s ease-in-out infinite;
   pointer-events: none;
   clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
 }
@@ -696,7 +696,7 @@ p strong { text-shadow: 0 0 6px rgba(200,180,140,0.2); }
   position: absolute; top:0; left:0;
   color: rgba(0,220,255,0.08);
   transform: translateX(2px) translateY(-1px);
-  animation: title-ghost-layer 11s ease-in-out infinite reverse;
+  animation: title-ghost-layer 3.5s ease-in-out infinite reverse;
   pointer-events: none;
   clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
 }
@@ -712,10 +712,10 @@ p strong { text-shadow: 0 0 6px rgba(200,180,140,0.2); }
 
 <div id="vignette"></div>
 <div id="vhs-track">
-  <div class="vhs-band" style="--dur:7s;  --delay:0s;  height:3px;"></div>
-  <div class="vhs-band" style="--dur:11s; --delay:2.5s;height:5px;opacity:0.7;"></div>
-  <div class="vhs-band" style="--dur:9s;  --delay:5s;  height:2px;"></div>
-  <div class="vhs-band" style="--dur:14s; --delay:1s;  height:8px;opacity:0.5;"></div>
+  <div class="vhs-band" style="--dur:2s;  --delay:0.0s;  height:3px;"></div>
+  <div class="vhs-band" style="--dur:3s; --delay:0.8s;height:5px;opacity:0.7;"></div>
+  <div class="vhs-band" style="--dur:2s;  --delay:1.5s;  height:2px;"></div>
+  <div class="vhs-band" style="--dur:4s; --delay:0.3s;  height:8px;opacity:0.5;"></div>
 </div>
 <div id="warm-noise"></div>
 <div id="timecode" id="tc">00:00:00:00</div>
@@ -878,15 +878,15 @@ function corruptRandomChar() {
 }
 
 // Fire random corruptions
-setInterval(corruptRandomChar, 400);
-setInterval(corruptRandomChar, 650);
+setInterval(corruptRandomChar, 120);
+setInterval(corruptRandomChar, 200);
 setInterval(() => {
   // Burst mode: corrupt 4-8 chars at once
   if (Math.random() < 0.08) {
     const n = 4 + Math.floor(Math.random() * 4);
     for (let i = 0; i < n; i++) setTimeout(corruptRandomChar, i * 50);
   }
-}, 3000);
+}, 800);
 
 // Tape dropout on random sections
 const sections = document.querySelectorAll('.doc-section, .icc-about');
@@ -937,7 +937,7 @@ let si = 0;
 setInterval(() => {
   si = (si + 1) % statuses.length;
   navStatus.textContent = statuses[si];
-}, 4000 + Math.random() * 8000);
+}, 1200 + Math.random() * 2500);
 
 // Enhanced cursor trail
 let lastTrail = 0;
