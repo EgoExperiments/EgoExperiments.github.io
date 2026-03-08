@@ -23,81 +23,442 @@
 <meta property="og:type" content="website"/>
 <link rel="canonical" href="https://egoexperiments.com/declassified/"/>
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
 <style>
-  :root {
-    --bg: #080808;
-    --text: #b8b8b8;
-    --dim: #404040;
-    --muted: #666;
-    --accent: #5b9ef5;
-    --border: #141414;
-    --mono: 'DejaVu Sans Mono', 'Courier New', monospace;
+/* ── VARIABLES ─────────────────────────────────────── */
+:root {
+  --bg:       #050507;
+  --bg2:      #080810;
+  --text:     #b8c4b8;
+  --dim:      #3a4a3a;
+  --muted:    #5a6a5a;
+  --red:      #8b0000;
+  --red-hot:  #cc2222;
+  --green:    #1a3a1a;
+  --glow:     rgba(0,255,100,0.04);
+  --border:   #111118;
+  --border2:  #1a1a2a;
+  --mono:     'Share Tech Mono', 'Courier New', monospace;
+  --title:    'Orbitron', monospace;
+  --body:     'Courier Prime', 'Courier New', monospace;
+  --scan-gap: 3px;
+}
+
+/* ── RESET ─────────────────────────────────────────── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+/* ── BODY + GRAIN + SCANLINES ──────────────────────── */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 14px;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+  cursor: crosshair;
+  overflow-x: hidden;
+}
+
+/* CRT scanlines */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent calc(var(--scan-gap) * 2),
+    rgba(0,0,0,0.15) calc(var(--scan-gap) * 2),
+    rgba(0,0,0,0.15) calc(var(--scan-gap) * 2 + 1px)
+  );
+  pointer-events: none; z-index: 9998;
+}
+
+/* Grain */
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 0.1s steps(1) infinite;
+  pointer-events: none; z-index: 9999;
+}
+@keyframes grain {
+  0%  { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 1px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-1px, 3px); }
+  80% { transform: translate(3px, -1px); }
+  100%{ transform: translate(0, 0); }
+}
+
+/* Vignette */
+#vignette {
+  position: fixed; inset: 0;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.75) 100%);
+  pointer-events: none; z-index: 9997;
+}
+
+/* ── NAV ───────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: rgba(5,5,7,0.97);
+  border-bottom: 1px solid var(--border2);
+  padding: 12px 28px;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 1000;
+  font-family: var(--mono);
+}
+.nav-logo {
+  color: var(--dim); font-size: 9px; letter-spacing: 4px;
+  text-decoration: none; text-transform: uppercase;
+  transition: color .2s;
+}
+.nav-logo:hover { color: var(--muted); }
+.nav-status {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 8px; letter-spacing: 3px; color: var(--red);
+  text-transform: uppercase;
+}
+.nav-status::before {
+  content: '';
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--red);
+  animation: blink-red 2s step-end infinite;
+}
+@keyframes blink-red { 0%,100%{opacity:1} 50%{opacity:0.2} }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a {
+  color: var(--dim); text-decoration: none;
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  transition: color .15s;
+}
+.nav-links a:hover { color: var(--text); }
+
+/* ── CLASSIFICATION CORNER MARKS ───────────────────── */
+.corner-mark {
+  position: fixed;
+  font-family: var(--mono);
+  font-size: 8px; letter-spacing: 2px;
+  color: rgba(139,0,0,0.25);
+  text-transform: uppercase;
+  pointer-events: none; z-index: 100;
+}
+.corner-mark.tl { top: 60px; left: 12px; }
+.corner-mark.tr { top: 60px; right: 12px; text-align: right; }
+.corner-mark.bl { bottom: 20px; left: 12px; }
+.corner-mark.br { bottom: 20px; right: 12px; text-align: right; }
+
+/* ── MAIN CONTAINER ────────────────────────────────── */
+main {
+  max-width: 680px; margin: 0 auto;
+  padding: 100px 28px 80px;
+  position: relative;
+}
+
+/* ICC Watermark behind content */
+.watermark {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(400px, 70vw);
+  opacity: 0.025;
+  pointer-events: none; z-index: 0;
+  filter: grayscale(1) contrast(2);
+}
+
+/* ── ICC HEADER SECTION ────────────────────────────── */
+.icc-header {
+  text-align: center;
+  padding: 52px 0 40px;
+  margin-bottom: 64px;
+  position: relative;
+  border-bottom: 1px solid var(--border2);
+}
+.icc-header::after {
+  content: '';
+  position: absolute; bottom: -1px; left: 50%;
+  transform: translateX(-50%);
+  width: 60px; height: 1px;
+  background: var(--red);
+  opacity: 0.4;
+}
+.icc-logo {
+  width: clamp(100px, 22vw, 150px);
+  display: block; margin: 0 auto 28px;
+  opacity: 0.45;
+  filter: sepia(0.3) hue-rotate(20deg);
+  animation: logo-flicker 8s ease-in-out infinite;
+}
+@keyframes logo-flicker {
+  0%,90%,100% { opacity: 0.45; }
+  91%          { opacity: 0.2; }
+  92%          { opacity: 0.45; }
+  94%          { opacity: 0.3; }
+  95%          { opacity: 0.45; }
+}
+.icc-org-name {
+  font-family: var(--title);
+  font-size: clamp(10px, 2vw, 12px);
+  letter-spacing: 6px; color: var(--muted);
+  text-transform: uppercase; margin-bottom: 24px;
+}
+.icc-notices { display: flex; flex-direction: column; gap: 8px; }
+.icc-notice {
+  font-family: var(--mono);
+  font-size: 9px; letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: opacity .3s;
+}
+.icc-notice.n1 { color: rgba(180,180,180,0.12); }
+.icc-notice.n2 { color: rgba(180,180,180,0.07); }
+.icc-notice.n3 { color: rgba(180,180,180,0.04); }
+.icc-notice.n4 { color: rgba(180,180,180,0.025); margin-top: 8px; letter-spacing: 5px; }
+
+/* ── SECTION LABEL ──────────────────────────────────── */
+.sec-label {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: var(--mono);
+  font-size: 8px; letter-spacing: 4px; color: var(--dim);
+  text-transform: uppercase;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border2);
+  margin-bottom: 32px;
+}
+.sec-label .classification {
+  color: var(--red); opacity: 0.5; letter-spacing: 2px;
+}
+
+/* ── SECTIONS ───────────────────────────────────────── */
+.doc-section { margin-bottom: 72px; }
+
+/* ── MAIN HEADING ───────────────────────────────────── */
+.doc-title {
+  font-family: var(--title);
+  font-size: clamp(28px, 6vw, 40px);
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #d0d8d0;
+  line-height: 1.15;
+  margin-bottom: 32px;
+  position: relative;
+}
+.doc-title.glitch { animation: glitch-title 12s ease-in-out infinite; }
+
+@keyframes glitch-title {
+  0%,85%,100% {
+    text-shadow: none;
+    transform: none;
+    clip-path: none;
   }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--mono);
-    font-size: 13px;
-    line-height: 1.9;
-    -webkit-font-smoothing: antialiased;
+  86% {
+    text-shadow: -2px 0 var(--red-hot), 2px 0 rgba(0,255,100,0.4);
+    transform: translate(1px, 0);
   }
-  nav {
-    position: fixed; top: 0; left: 0; right: 0;
-    background: rgba(8,8,8,0.98);
-    border-bottom: 1px solid var(--border);
-    padding: 14px 24px;
-    display: flex; justify-content: space-between; align-items: center;
-    z-index: 100;
+  87% {
+    text-shadow: 2px 0 var(--red-hot), -2px 0 rgba(0,255,100,0.4);
+    transform: translate(-2px, 0);
   }
-  .logo { color: var(--dim); font-size: 10px; letter-spacing: 3px; text-decoration: none; text-transform: uppercase; }
-  .logo:hover { color: var(--muted); }
-  .nav-links { display: flex; gap: 20px; }
-  .nav-links a { color: var(--dim); text-decoration: none; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; }
-  .nav-links a:hover { color: var(--accent); }
-  main { max-width: 600px; margin: 0 auto; padding: 96px 24px 80px; }
-  section { margin-bottom: 60px; }
-  .label {
-    font-size: 9px; letter-spacing: 4px; color: var(--dim);
-    text-transform: uppercase; padding-bottom: 14px;
-    border-bottom: 1px solid var(--border); margin-bottom: 28px;
-    display: flex; justify-content: space-between;
+  88% {
+    text-shadow: none;
+    transform: translate(0, 1px);
   }
-  h1 {
-    font-size: clamp(20px, 4vw, 26px);
-    color: #e0e0e0; letter-spacing: 2px;
-    margin-bottom: 24px; line-height: 1.4; font-weight: normal;
+  89% {
+    text-shadow: -1px 0 var(--red-hot);
+    transform: translate(1px, 0);
   }
-  p { margin-bottom: 14px; }
-  p.muted { color: var(--muted); font-size: 12px; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .doc-link {
-    display: flex; align-items: flex-start; gap: 14px;
-    border: 1px solid var(--border); padding: 14px 16px; margin-bottom: 6px;
-    text-decoration: none; color: var(--muted); transition: border-color .15s, color .15s;
-    font-size: 12px; letter-spacing: 0.5px;
-  }
-  .doc-link:hover { border-color: #222; color: var(--text); text-decoration: none; }
-  .doc-prefix { color: var(--dim); flex-shrink: 0; }
-  hr { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
-  footer {
-    max-width: 600px; margin: 0 auto;
-    border-top: 1px solid var(--border);
-    padding: 24px 24px 48px;
-  }
-  footer p { font-size: 10px; letter-spacing: 2px; color: var(--dim); margin-bottom: 6px; }
-  @media (max-width: 600px) {
-    main { padding: 80px 16px 60px; }
-    nav { padding: 12px 16px; }
-    .nav-links { gap: 14px; }
-  }
+  90% { text-shadow: none; transform: none; }
+}
+
+/* ── BODY TEXT ──────────────────────────────────────── */
+p {
+  font-family: var(--body);
+  font-size: 13px; line-height: 1.9;
+  color: var(--text); margin-bottom: 16px;
+}
+p.secondary {
+  font-family: var(--mono);
+  font-size: 11px; color: var(--muted); line-height: 1.8;
+}
+strong { color: #d0d8d0; font-weight: 700; }
+
+/* ── REDACTION ──────────────────────────────────────── */
+.redact {
+  position: relative;
+  display: inline-block;
+  background: #0d0d0d;
+  color: transparent;
+  padding: 0 4px;
+  cursor: not-allowed;
+}
+.redact::after {
+  content: attr(data-hidden);
+  position: absolute; inset: 0;
+  color: var(--red-hot);
+  opacity: 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  display: flex; align-items: center; justify-content: center;
+  transition: opacity .1s;
+}
+.redact:hover::after { opacity: 0.06; }
+
+/* ── DOC LINKS ──────────────────────────────────────── */
+.doc-links { margin-top: 28px; display: flex; flex-direction: column; gap: 6px; }
+.doc-link {
+  display: flex; align-items: center; gap: 14px;
+  border: 1px solid var(--border2);
+  border-left: 2px solid var(--red);
+  padding: 14px 18px;
+  text-decoration: none;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.5px;
+  color: var(--muted);
+  transition: all .2s;
+  position: relative; overflow: hidden;
+  background: rgba(139,0,0,0.02);
+}
+.doc-link::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, rgba(139,0,0,0.04), transparent);
+  opacity: 0; transition: opacity .2s;
+}
+.doc-link:hover {
+  color: var(--text);
+  border-color: rgba(139,0,0,0.4);
+  border-left-color: var(--red-hot);
+  text-decoration: none;
+}
+.doc-link:hover::before { opacity: 1; }
+.doc-prefix {
+  color: var(--red); opacity: 0.5; flex-shrink: 0;
+  font-size: 14px;
+}
+.doc-stamp {
+  margin-left: auto; flex-shrink: 0;
+  font-size: 7px; letter-spacing: 3px;
+  color: rgba(139,0,0,0.3); text-transform: uppercase;
+}
+
+/* ── DIVIDER ────────────────────────────────────────── */
+.divider {
+  border: none; margin: 64px 0;
+  position: relative; height: 1px;
+}
+.divider::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border2) 20%, var(--border2) 80%, transparent);
+}
+.divider::after {
+  content: '◆';
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 6px; color: var(--dim);
+  background: var(--bg); padding: 0 12px;
+}
+
+/* ── ICC ABOUT (full width fix) ─────────────────────── */
+.icc-about {
+  max-width: 680px; margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ── COMPLIANCE TEXT ────────────────────────────────── */
+.compliance-block {
+  border-left: 1px solid rgba(139,0,0,0.15);
+  padding-left: 20px;
+  display: flex; flex-direction: column; gap: 14px;
+}
+.compliance-block p.secondary {
+  position: relative;
+}
+
+/* ── THANK YOU ──────────────────────────────────────── */
+.thank-you {
+  text-align: center;
+  padding: 40px 28px 0;
+  max-width: 680px; margin: 0 auto;
+}
+.thank-you p {
+  font-family: var(--mono);
+  font-size: 8px; letter-spacing: 6px;
+  color: rgba(180,180,180,0.04);
+  text-transform: uppercase;
+  animation: ty-pulse 20s ease-in-out infinite;
+}
+@keyframes ty-pulse {
+  0%,70%,100% { color: rgba(180,180,180,0.04); }
+  75%          { color: rgba(180,180,180,0.09); }
+  76%          { color: rgba(180,180,180,0.04); }
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+footer {
+  max-width: 680px; margin: 0 auto;
+  border-top: 1px solid var(--border2);
+  padding: 28px 28px 60px;
+  font-family: var(--mono);
+  position: relative;
+}
+footer::before {
+  content: '';
+  position: absolute; top: -1px; left: 50%;
+  transform: translateX(-50%);
+  width: 40px; height: 1px;
+  background: var(--red); opacity: 0.3;
+}
+footer p {
+  font-size: 9px; letter-spacing: 2px;
+  color: rgba(90,100,90,0.5); margin-bottom: 6px;
+  font-family: var(--mono);
+}
+footer p:last-child { color: rgba(90,100,90,0.25); }
+
+/* ── LINKS ──────────────────────────────────────────── */
+a { color: rgba(100,140,200,0.6); text-decoration: none; transition: color .15s; }
+a:hover { color: rgba(100,140,200,0.9); }
+
+/* ── REVEAL ANIMATION ───────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: reveal-in 0.6s ease forwards;
+}
+@keyframes reveal-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── MOBILE ─────────────────────────────────────────── */
+@media (max-width: 600px) {
+  main { padding: 88px 20px 60px; }
+  nav { padding: 12px 20px; }
+  .nav-links { gap: 16px; }
+  .corner-mark { display: none; }
+  .icc-about { padding: 0 20px; }
+  .thank-you, footer { padding-left: 20px; padding-right: 20px; }
+}
 </style>
 </head>
 <body>
 
+<div id="vignette"></div>
+
+<!-- Classification corner marks -->
+<div class="corner-mark tl">RESTRICTED<br>ICC-PORTAL-07</div>
+<div class="corner-mark tr">SANITIZED<br>FOIA RELEASE</div>
+<div class="corner-mark bl">UNSPSC 854444</div>
+<div class="corner-mark br">©&nbsp;ICC&nbsp;2026</div>
+
+<!-- ICC watermark behind everything -->
+<img src="../images/ICC-SANITIZED-W.png" class="watermark" alt="">
+
 <nav>
-  <a href="https://egoexperiments.com" class="logo">EGEX AI Corp</a>
+  <a href="https://egoexperiments.com" class="nav-logo">EGEX AI Corp</a>
+  <div class="nav-status">LIVE</div>
   <div class="nav-links">
     <a href="mailto:pitch@egoexperiments.com">Pitch</a>
     <a href="mailto:partner@egoexperiments.com">Partner</a>
@@ -107,80 +468,95 @@
 
 <main>
 
-  <section style="text-align:center;padding:40px 0 20px;border-bottom:1px solid var(--border);margin-bottom:48px;">
-    <img src="../images/ICC-SANITIZED-W.png" alt="[SANITIZED]" style="width:180px;opacity:0.35;display:block;margin:0 auto 24px;">
-    <p style="font-size:10px;letter-spacing:4px;color:var(--dim);text-transform:uppercase;margin-bottom:8px;">Information Control Center</p>
-    <p style="font-size:9px;letter-spacing:3px;color:#2a2a2a;text-transform:uppercase;">This content has been sanitized by the Information Control Center</p>
-    <p style="font-size:9px;letter-spacing:3px;color:#222;text-transform:uppercase;margin-top:6px;">Access to this page has been enabled for select candidates / test subjects</p>
-    <p style="font-size:9px;letter-spacing:3px;color:#1a1a1a;text-transform:uppercase;margin-top:6px;">Endpoint has been flagged for review</p>
-    <p style="font-size:9px;letter-spacing:5px;color:#1e1e1e;text-transform:uppercase;margin-top:16px;">Please stand by</p>
-  </section>
+  <!-- ICC HEADER -->
+  <div class="icc-header reveal" style="animation-delay:0.1s">
+    <img src="../images/ICC-SANITIZED-W.png" class="icc-logo" alt="[SANITIZED]">
+    <div class="icc-org-name">Information Control Center</div>
+    <div class="icc-notices">
+      <span class="icc-notice n1">This content has been sanitized by the Information Control Center</span>
+      <span class="icc-notice n2">Access to this page has been enabled for select candidates / test subjects</span>
+      <span class="icc-notice n3">Endpoint has been flagged for review</span>
+      <span class="icc-notice n4">Please stand by</span>
+    </div>
+  </div>
 
-  <section>
-    <div class="label">
+  <!-- IMMACULATE CONSTELLATION -->
+  <div class="doc-section reveal" style="animation-delay:0.3s">
+    <div class="sec-label">
       <span>Compliance Disclosure</span>
-      <span>FOIA — CIA</span>
+      <span class="classification">FOIA — CIA</span>
     </div>
 
-    <h1>IMMACULATE<br>CONSTELLATION</h1>
+    <h1 class="doc-title glitch">IMMACULATE<br>CONSTELLATION</h1>
 
     <p>EGEX AI CORP has obtained official documentation confirming the existence of programs designated under <strong>IMMACULATE CONSTELLATION</strong>. No Glomar denial was issued.</p>
 
-    <p>EGEX AI CORP has played a role in the collection, analysis, and distribution of materials related to Unidentified Aerial Phenomena and Non-Human Intelligence. The nature and scope of this role is subject to ongoing legal review.</p>
+    <p>EGEX AI CORP has played a role in the collection, analysis, and distribution of materials related to Unidentified Aerial Phenomena and Non-Human Intelligence. The nature and scope of this role is subject to <span class="redact" data-hidden="ongoing review">████████████████</span> ongoing legal review.</p>
 
-    <p class="muted">IMMACULATE CONSTELLATION is an Unacknowledged Special Access Program involving collection and analysis of UAP and NHI-linked materials. Congressional oversight has been limited by design.</p>
+    <p class="secondary">IMMACULATE CONSTELLATION is an Unacknowledged Special Access Program involving collection and analysis of UAP and NHI-linked materials. Congressional oversight has been limited <span class="redact" data-hidden="by design">██████████</span> by design.</p>
 
-    <div style="margin-top:24px">
+    <div class="doc-links">
       <a class="doc-link" href="https://archive.org/details/usap-001-redacted" target="_blank" rel="noopener">
-        <span class="doc-prefix">&#9608;</span>
+        <span class="doc-prefix">■</span>
         <span>USAP-001 &mdash; IMMACULATE CONSTELLATION &mdash; [REDACTED]</span>
+        <span class="doc-stamp">Archive.org</span>
       </a>
     </div>
-  </section>
+  </div>
 
-  <hr>
+  <div class="divider"></div>
 
-  <section>
-    <div class="label">
+  <!-- LAKEVIEW -->
+  <div class="doc-section reveal" style="animation-delay:0.5s">
+    <div class="sec-label">
       <span>Lakeview</span>
-      <span>Sites of Operational Interest</span>
+      <span class="classification">Sites of Operational Interest</span>
     </div>
-    <a class="doc-link" href="https://www.mississauga.ca/projects-and-strategies/city-projects/lakeview-innovation-district/" target="_blank" rel="noopener">
-      <span class="doc-prefix">&#9608;</span>
-      <span>Lakeview Innovation District &mdash; City of Mississauga</span>
-    </a>
-    <a class="doc-link" href="https://www.lakeviewrc.ca/" target="_blank" rel="noopener">
-      <span class="doc-prefix">&#9608;</span>
-      <span>Lakeview Recovery Community &mdash; Treaty 6 Territory, Alberta</span>
-    </a>
-  </section>
+    <div class="doc-links">
+      <a class="doc-link" href="https://www.mississauga.ca/projects-and-strategies/city-projects/lakeview-innovation-district/" target="_blank" rel="noopener">
+        <span class="doc-prefix">■</span>
+        <span>Lakeview Innovation District &mdash; City of Mississauga</span>
+        <span class="doc-stamp">Active</span>
+      </a>
+      <a class="doc-link" href="https://www.lakeviewrc.ca/" target="_blank" rel="noopener">
+        <span class="doc-prefix">■</span>
+        <span>Lakeview Recovery Community &mdash; Treaty 6 Territory, Alberta</span>
+        <span class="doc-stamp">Active</span>
+      </a>
+    </div>
+  </div>
 
-  <hr>
+  <div class="divider"></div>
 
-  <section>
-    <div class="label"><span>Compliance</span></div>
-    <p class="muted">EGEX AI CORP was not a primary contractor for IMMACULATE CONSTELLATION. Any inference of primary contractual involvement is inaccurate and should not be drawn from materials published on this page.</p>
-    <p class="muted">EGEX AI CORP does not conduct unauthorized psychological operations on civilian populations. All programs administered by or in association with EGEX AI CORP operate within applicable federal frameworks governing human subject participation.</p>
-    <p class="muted">All employees of EGEX AI CORP are of terrestrial descent. The nature of any non-human collaborations cannot be confirmed or denied at this time.</p>
-    <p class="muted">EGEX AI CORP is a Global Peacekeeping Initiative. Our mandate is the stabilization of environments in which perception has been compromised.</p>
-  </section>
+  <!-- COMPLIANCE -->
+  <div class="doc-section reveal" style="animation-delay:0.65s">
+    <div class="sec-label"><span>Compliance</span></div>
+    <div class="compliance-block">
+      <p class="secondary">EGEX AI CORP was not a primary contractor for IMMACULATE CONSTELLATION. Any inference of primary contractual involvement is inaccurate and should not be drawn from materials published on this page.</p>
+      <p class="secondary">EGEX AI CORP does not conduct <span class="redact" data-hidden="unauthorized">████████████</span> unauthorized psychological operations on civilian populations. All programs administered by or in association with EGEX AI CORP operate within applicable federal frameworks governing human subject participation.</p>
+      <p class="secondary">All employees of EGEX AI CORP are of terrestrial descent. The nature of any non-human collaborations cannot be confirmed or denied at this time.</p>
+      <p class="secondary">EGEX AI CORP is a Global Peacekeeping Initiative. Our mandate is the stabilization of environments in which perception has been compromised.</p>
+    </div>
+  </div>
 
 </main>
 
-  <hr>
+<!-- ICC ABOUT (outside main container intentional — represents org above EGEX) -->
+<div class="divider" style="max-width:680px;margin:0 auto 64px;padding:0 28px;"></div>
 
-  <section>
-    <div class="label">
-      <span>Information Control Center</span>
-      <span>About</span>
-    </div>
-    <p>The Information Control Center is the compliance and disclosure arm of EGEX AI CORP. It administers the controlled release of materials related to ongoing and concluded special programs, maintains oversight of autonomous system outputs, and manages public-facing documentation for programs operating under restricted access.</p>
-    <p class="muted">The ICC does not confirm or deny the operational status of any program not listed in this disclosure. Materials released through this portal have been reviewed for compliance with applicable information control frameworks. Redactions are permanent.</p>
-    <p class="muted">The ICC operates independently of EGEX AI CORP's commercial divisions. Its mandate predates the founding of EGEX AI CORP. Founding records are not available for public review.</p>
-    <p class="muted" style="margin-top:20px;font-size:11px;color:#2a2a2a;">If you are reading this, your access was not accidental.</p>
-  </section>
-<div style="text-align:center;padding:32px 24px 0;max-width:600px;margin:0 auto;">
-  <p style="font-size:9px;letter-spacing:5px;color:#1a1a1a;text-transform:uppercase;">Thank you for your compliance</p>
+<div class="icc-about reveal" style="animation-delay:0.8s">
+  <div class="sec-label">
+    <span>Information Control Center</span>
+    <span class="classification">About</span>
+  </div>
+  <p>The Information Control Center is the compliance and disclosure arm of EGEX AI CORP. It administers the controlled release of materials related to ongoing and concluded special programs, maintains oversight of autonomous system outputs, and manages public-facing documentation for programs operating under restricted access.</p>
+  <p class="secondary">The ICC does not confirm or deny the operational status of any program not listed in this disclosure. Materials released through this portal have been reviewed for compliance with applicable information control frameworks. Redactions are permanent.</p>
+  <p class="secondary">The ICC operates independently of EGEX AI CORP's commercial divisions. Its mandate predates the founding of EGEX AI CORP. Founding records are not available for public review.</p>
+  <p class="secondary" style="margin-top:24px;color:rgba(90,90,90,0.35);">If you are reading this, your access was not accidental.</p>
+</div>
+
+<div class="thank-you">
+  <p>Thank you for your compliance</p>
 </div>
 
 <footer>
@@ -188,6 +564,46 @@
   <p>DUNS&nbsp;24-333-0471 &nbsp;&middot;&nbsp; NAICS&nbsp;541715 &nbsp;&middot;&nbsp; GSIN&nbsp;AJ212508 &nbsp;&middot;&nbsp; UNSPSC&nbsp;854444</p>
   <p>&copy; THE KRAKEN FOUNDATION 2026</p>
 </footer>
+
+<script>
+// Staggered reveal on scroll
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.animationPlayState = 'running';
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(el => {
+  el.style.animationPlayState = 'paused';
+  io.observe(el);
+});
+
+// Occasional corruption of nav status text
+const navStatus = document.querySelector('.nav-status');
+const statuses = ['LIVE','MONITORING','TRACKING','LIVE','LIVE','ACTIVE','LIVE','FLAGGED'];
+let si = 0;
+setInterval(() => {
+  si = (si + 1) % statuses.length;
+  navStatus.textContent = statuses[si];
+}, 4000 + Math.random() * 8000);
+
+// Ghost cursor trail
+document.addEventListener('mousemove', (e) => {
+  const trail = document.createElement('div');
+  trail.style.cssText = `
+    position:fixed;left:${e.clientX}px;top:${e.clientY}px;
+    width:3px;height:3px;border-radius:50%;
+    background:rgba(139,0,0,0.3);pointer-events:none;
+    z-index:9996;transition:opacity 0.4s;
+  `;
+  document.body.appendChild(trail);
+  setTimeout(() => { trail.style.opacity = '0'; }, 50);
+  setTimeout(() => { trail.remove(); }, 500);
+});
+</script>
 
 </body>
 </html>
