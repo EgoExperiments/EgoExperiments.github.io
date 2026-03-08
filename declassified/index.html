@@ -287,10 +287,25 @@ p {
   font-family: var(--body);
   font-size: 13px; line-height: 1.9;
   color: var(--text); margin-bottom: 16px;
+  text-shadow: 0.4px 0 rgba(255,80,80,0.08), -0.4px 0 rgba(0,200,255,0.06);
+  animation: text-ghost 18s ease-in-out infinite;
+}
+@keyframes text-ghost {
+  0%,93%,100% { text-shadow: 0.4px 0 rgba(255,80,80,0.08), -0.4px 0 rgba(0,200,255,0.06); }
+  94% { text-shadow: 3px 0 rgba(255,80,80,0.2), -2px 0 rgba(0,200,255,0.15); letter-spacing: 0.2px; }
+  94.5% { text-shadow: -1px 0 rgba(255,80,80,0.1), 1px 0 rgba(0,200,255,0.1); }
+  95% { text-shadow: 0.4px 0 rgba(255,80,80,0.08), -0.4px 0 rgba(0,200,255,0.06); }
 }
 p.secondary {
   font-family: var(--mono);
   font-size: 11px; color: var(--muted); line-height: 1.8;
+  text-shadow: 0.3px 0 rgba(255,80,80,0.06);
+  animation: text-ghost-secondary 25s ease-in-out infinite;
+}
+@keyframes text-ghost-secondary {
+  0%,90%,100% { text-shadow: 0.3px 0 rgba(255,80,80,0.06); }
+  91% { text-shadow: 2px 0 rgba(255,80,80,0.15), -1px 0 rgba(0,200,255,0.1); }
+  92% { text-shadow: 0.3px 0 rgba(255,80,80,0.06); }
 }
 strong { color: #d0d8d0; font-weight: 700; }
 
@@ -618,6 +633,79 @@ p strong { text-shadow: 0 0 6px rgba(200,180,140,0.2); }
   75% { transform: translate(2px,0); }
   100%{ transform: translate(0,0); }
 }
+
+/* ── TAPE DROPOUT ────────────────────────────────────── */
+@keyframes tape-dropout {
+  0%,96%,100% { opacity:1; filter:none; }
+  96.5% {
+    opacity: 0.3;
+    filter: brightness(3) saturate(0) blur(0.5px);
+    transform: translateX(8px);
+  }
+  97% { opacity:1; filter:none; transform:none; }
+  97.3% { opacity:0.7; filter:brightness(0.4); }
+  97.6% { opacity:1; filter:none; }
+}
+
+/* ── INDIVIDUAL LETTER ANIMATION ─────────────────────── */
+.glitch-char {
+  display: inline-block;
+  animation: char-corrupt 0.15s steps(1) forwards;
+}
+@keyframes char-corrupt {
+  0%   { opacity:1; }
+  30%  { opacity:0.3; filter: brightness(3) hue-rotate(180deg); }
+  60%  { opacity:0.8; }
+  100% { opacity:1; filter:none; }
+}
+
+/* ── SECTION LABEL CORRUPTION ────────────────────────── */
+.sec-label {
+  position: relative;
+}
+.sec-label::after {
+  content: attr(data-corrupt);
+  position: absolute; top: 0; left: 0;
+  color: rgba(255,80,80,0.08);
+  font-size: inherit; letter-spacing: inherit;
+  animation: label-corrupt 30s ease-in-out infinite;
+  pointer-events: none;
+  transform: translateX(1px);
+}
+@keyframes label-corrupt {
+  0%,95%,100% { opacity:0; }
+  95.5% { opacity:1; transform: translateX(3px); }
+  96% { opacity:0; }
+}
+
+/* ── DOC TITLE — per-word layering ───────────────────── */
+.doc-title {
+  position: relative;
+}
+.doc-title::before {
+  content: attr(data-text);
+  position: absolute; top:0; left:0;
+  color: rgba(255,40,40,0.12);
+  transform: translateX(-2px) translateY(1px);
+  animation: title-ghost-layer 8s ease-in-out infinite;
+  pointer-events: none;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+.doc-title::after {
+  content: attr(data-text);
+  position: absolute; top:0; left:0;
+  color: rgba(0,220,255,0.08);
+  transform: translateX(2px) translateY(-1px);
+  animation: title-ghost-layer 11s ease-in-out infinite reverse;
+  pointer-events: none;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+@keyframes title-ghost-layer {
+  0%,80%,100% { opacity:0; transform: translateX(-2px) translateY(1px); }
+  82% { opacity:1; transform: translateX(-4px) translateY(2px); }
+  84% { opacity:0.5; transform: translateX(2px) translateY(-1px); }
+  86% { opacity:0; }
+}
 </style>
 </head>
 <body>
@@ -671,12 +759,12 @@ p strong { text-shadow: 0 0 6px rgba(200,180,140,0.2); }
 
   <!-- IMMACULATE CONSTELLATION -->
   <div class="doc-section reveal" style="animation-delay:0.3s">
-    <div class="sec-label">
+    <div class="sec-label" data-corrupt="COMPLIAN█░▒▓">
       <span>Compliance Disclosure</span>
       <span class="classification">FOIA — CIA</span>
     </div>
 
-    <h1 class="doc-title glitch">IMMACULATE<br>CONSTELLATION</h1>
+    <h1 class="doc-title glitch" data-text="IMMACULATECONSTELLATION">IMMACULATE<br>CONSTELLATION</h1>
 
     <p>EGEX AI CORP has obtained official documentation confirming the existence of programs designated under <strong>IMMACULATE CONSTELLATION</strong>. No Glomar denial was issued.</p>
 
@@ -697,7 +785,7 @@ p strong { text-shadow: 0 0 6px rgba(200,180,140,0.2); }
 
   <!-- LAKEVIEW -->
   <div class="doc-section reveal" style="animation-delay:0.5s">
-    <div class="sec-label">
+    <div class="sec-label" data-corrupt="LAKEVIEW█░▒▓">
       <span>Lakeview</span>
       <span class="classification">Sites of Operational Interest</span>
     </div>
@@ -719,7 +807,7 @@ p strong { text-shadow: 0 0 6px rgba(200,180,140,0.2); }
 
   <!-- COMPLIANCE -->
   <div class="doc-section reveal" style="animation-delay:0.65s">
-    <div class="sec-label"><span>Compliance</span></div>
+    <div class="sec-label" data-corrupt="COMPLIAN█░▒▓"><span>Compliance</span></div>
     <div class="compliance-block">
       <p class="secondary">EGEX AI CORP was not a primary contractor for IMMACULATE CONSTELLATION. Any inference of primary contractual involvement is inaccurate and should not be drawn from materials published on this page.</p>
       <p class="secondary">EGEX AI CORP does not conduct <span class="redact" data-hidden="unauthorized">████████████</span> unauthorized psychological operations on civilian populations. All programs administered by or in association with EGEX AI CORP operate within applicable federal frameworks governing human subject participation.</p>
@@ -734,7 +822,7 @@ p strong { text-shadow: 0 0 6px rgba(200,180,140,0.2); }
 <div class="divider" style="max-width:680px;margin:0 auto 64px;padding:0 28px;"></div>
 
 <div class="icc-about reveal" style="animation-delay:0.8s">
-  <div class="sec-label">
+  <div class="sec-label" data-corrupt="INFORMAT█░▒▓">
     <span>Information Control Center</span>
     <span class="classification">About</span>
   </div>
@@ -755,6 +843,62 @@ p strong { text-shadow: 0 0 6px rgba(200,180,140,0.2); }
 </footer>
 
 <script>
+
+// Character corruption engine
+const CORRUPT_CHARS = '█▓▒░■□▪▫◆◇○●◉◎×÷±∞≈≠';
+const bodyParagraphs = [...document.querySelectorAll('main p, .icc-about p')];
+
+function corruptRandomChar() {
+  if (!bodyParagraphs.length) return;
+  const p = bodyParagraphs[Math.floor(Math.random() * bodyParagraphs.length)];
+  const walker = document.createTreeWalker(p, NodeFilter.SHOW_TEXT, null, false);
+  const textNodes = [];
+  let node;
+  while ((node = walker.nextNode())) {
+    if (node.textContent.trim().length > 3) textNodes.push(node);
+  }
+  if (!textNodes.length) return;
+  
+  const tn = textNodes[Math.floor(Math.random() * textNodes.length)];
+  const text = tn.textContent;
+  const idx = Math.floor(Math.random() * text.length);
+  if (!/[a-zA-Z0-9]/.test(text[idx])) return;
+  
+  // Replace char temporarily
+  const original = text[idx];
+  const corrupt = CORRUPT_CHARS[Math.floor(Math.random() * CORRUPT_CHARS.length)];
+  tn.textContent = text.slice(0,idx) + corrupt + text.slice(idx+1);
+  
+  const duration = 60 + Math.random() * 120;
+  setTimeout(() => {
+    if (tn.textContent[idx] === corrupt) {
+      tn.textContent = text.slice(0,idx) + original + text.slice(idx+1);
+    }
+  }, duration);
+}
+
+// Fire random corruptions
+setInterval(corruptRandomChar, 400);
+setInterval(corruptRandomChar, 650);
+setInterval(() => {
+  // Burst mode: corrupt 4-8 chars at once
+  if (Math.random() < 0.08) {
+    const n = 4 + Math.floor(Math.random() * 4);
+    for (let i = 0; i < n; i++) setTimeout(corruptRandomChar, i * 50);
+  }
+}, 3000);
+
+// Tape dropout on random sections
+const sections = document.querySelectorAll('.doc-section, .icc-about');
+sections.forEach(sec => {
+  setInterval(() => {
+    if (Math.random() < 0.04) {
+      sec.style.animation = 'tape-dropout 0.4s steps(1) forwards';
+      setTimeout(() => { sec.style.animation = ''; }, 500);
+    }
+  }, 8000 + Math.random() * 12000);
+});
+
 // VHS timecode counter
 const tc = document.getElementById('timecode');
 if (tc) {
