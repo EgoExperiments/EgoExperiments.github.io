@@ -51,16 +51,31 @@
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior: smooth; }
 
+/* ── CHROMATIC ABERRATION (background pulse) ───────── */
+@keyframes chroma-pulse {
+  0%,97%,100% { background-position: 0 0; }
+  98% { background-position: 2px 0; filter: hue-rotate(5deg); }
+  99% { background-position: -2px 0; filter: hue-rotate(-5deg); }
+}
+
 /* ── BODY + GRAIN + SCANLINES ──────────────────────── */
 body {
   background: var(--bg);
   color: var(--text);
+  animation: bg-breathe 30s ease-in-out infinite;
   font-family: var(--body);
   font-size: 14px;
   line-height: 1.85;
   -webkit-font-smoothing: antialiased;
   cursor: crosshair;
   overflow-x: hidden;
+}
+
+@keyframes bg-breathe {
+  0%,100% { background-color: #050507; }
+  50% { background-color: #060608; }
+  90% { background-color: #050507; }
+  95% { background-color: #080308; }
 }
 
 /* CRT scanlines */
@@ -246,31 +261,22 @@ main {
   margin-bottom: 32px;
   position: relative;
 }
-.doc-title.glitch { animation: glitch-title 12s ease-in-out infinite; }
+.doc-title.glitch { animation: glitch-title 9s ease-in-out infinite, glitch-title-2 17s ease-in-out infinite; }
 
 @keyframes glitch-title {
-  0%,85%,100% {
-    text-shadow: none;
-    transform: none;
-    clip-path: none;
-  }
-  86% {
-    text-shadow: -2px 0 var(--red-hot), 2px 0 rgba(0,255,100,0.4);
-    transform: translate(1px, 0);
-  }
-  87% {
-    text-shadow: 2px 0 var(--red-hot), -2px 0 rgba(0,255,100,0.4);
-    transform: translate(-2px, 0);
-  }
-  88% {
-    text-shadow: none;
-    transform: translate(0, 1px);
-  }
-  89% {
-    text-shadow: -1px 0 var(--red-hot);
-    transform: translate(1px, 0);
-  }
-  90% { text-shadow: none; transform: none; }
+  0%,78%,100% { text-shadow:none; transform:none; filter:none; }
+  79% { text-shadow:-3px 0 var(--red-hot),3px 0 rgba(0,255,80,0.5); transform:translate(2px,-1px); filter:brightness(1.3); }
+  80% { text-shadow:3px 0 var(--red-hot),-3px 0 rgba(0,255,80,0.5); transform:translate(-3px,1px); }
+  81% { text-shadow:none; transform:skewX(-2deg); filter:contrast(2); }
+  82% { text-shadow:-4px 0 rgba(204,34,34,0.8),4px 0 rgba(0,200,80,0.6); transform:translate(1px,2px) skewX(1deg); }
+  83% { text-shadow:2px 0 var(--red-hot); transform:translate(-1px,-1px); filter:none; }
+  84% { text-shadow:none; transform:none; }
+}
+@keyframes glitch-title-2 {
+  0%,92%,100% { clip-path:none; transform:none; }
+  93% { clip-path:polygon(0 20%,100% 20%,100% 40%,0 40%); transform:translate(-4px,0); }
+  94% { clip-path:polygon(0 60%,100% 60%,100% 80%,0 80%); transform:translate(4px,0); }
+  95% { clip-path:none; transform:none; }
 }
 
 /* ── BODY TEXT ──────────────────────────────────────── */
@@ -304,7 +310,16 @@ strong { color: #d0d8d0; font-weight: 700; }
   display: flex; align-items: center; justify-content: center;
   transition: opacity .1s;
 }
-.redact:hover::after { opacity: 0.06; }
+.redact:hover::after {
+  opacity: 0.18;
+  animation: redact-fail 0.4s steps(2) forwards;
+}
+@keyframes redact-fail {
+  0%   { opacity:0; letter-spacing:3px; }
+  30%  { opacity:0.25; letter-spacing:0; color:var(--red-hot); }
+  60%  { opacity:0.08; }
+  100% { opacity:0.18; }
+}
 
 /* ── DOC LINKS ──────────────────────────────────────── */
 .doc-links { margin-top: 28px; display: flex; flex-direction: column; gap: 6px; }
@@ -331,6 +346,14 @@ strong { color: #d0d8d0; font-weight: 700; }
   border-color: rgba(139,0,0,0.4);
   border-left-color: var(--red-hot);
   text-decoration: none;
+  animation: link-glitch 0.3s steps(1) 1;
+}
+@keyframes link-glitch {
+  0%  { filter: none; }
+  25% { filter: brightness(1.4) hue-rotate(180deg); }
+  50% { filter: none; }
+  75% { filter: brightness(0.8) hue-rotate(-90deg); }
+  100%{ filter: none; }
 }
 .doc-link:hover::before { opacity: 1; }
 .doc-prefix {
@@ -443,11 +466,57 @@ a:hover { color: rgba(100,140,200,0.9); }
   .icc-about { padding: 0 20px; }
   .thank-you, footer { padding-left: 20px; padding-right: 20px; }
 }
+/* ── INTERFERENCE BANNER ───────────────────────────── */
+#interference {
+  position: fixed; top: 45px; left: 0; right: 0;
+  background: var(--red);
+  padding: 4px 0;
+  text-align: center;
+  font-family: var(--mono); font-size: 8px; letter-spacing: 5px;
+  color: rgba(0,0,0,0.8); text-transform: uppercase;
+  z-index: 999; pointer-events: none;
+  opacity: 0;
+  animation: interference-flash 40s ease-in-out infinite;
+}
+@keyframes interference-flash {
+  0%,94%,100% { opacity:0; transform:scaleY(0); }
+  95% { opacity:1; transform:scaleY(1); }
+  97% { opacity:1; transform:scaleY(1); }
+  98% { opacity:0; transform:scaleY(0); }
+}
+
+/* ── FULL-SCREEN STATIC BURST ─────────────────────── */
+#static-burst {
+  position: fixed; inset: 0; pointer-events: none; z-index: 9996;
+  opacity: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E");
+  background-size: 512px;
+  mix-blend-mode: screen;
+  animation: static-burst 60s ease-in-out infinite;
+}
+@keyframes static-burst {
+  0%,88%,100% { opacity:0; }
+  89% { opacity:0.12; }
+  90% { opacity:0.06; }
+  91% { opacity:0.14; }
+  92% { opacity:0; }
+}
+
+/* ── SECTION LABEL FLICKER ─────────────────────────── */
+.sec-label { animation: label-flicker 20s ease-in-out infinite; }
+@keyframes label-flicker {
+  0%,96%,100% { opacity:1; }
+  97% { opacity:0.4; }
+  97.5% { opacity:1; }
+}
+
 </style>
 </head>
 <body>
 
 <div id="vignette"></div>
+<div id="interference">SIGNAL INTEGRITY COMPROMISED — PLEASE STAND BY</div>
+<div id="static-burst"></div>
 
 <!-- Classification corner marks -->
 <div class="corner-mark tl">RESTRICTED<br>ICC-PORTAL-07</div>
@@ -592,18 +661,50 @@ setInterval(() => {
   navStatus.textContent = statuses[si];
 }, 4000 + Math.random() * 8000);
 
-// Ghost cursor trail
+// Enhanced cursor trail
+let lastTrail = 0;
 document.addEventListener('mousemove', (e) => {
+  const now = Date.now();
+  if (now - lastTrail < 30) return;
+  lastTrail = now;
   const trail = document.createElement('div');
+  const size = Math.random() * 3 + 1;
   trail.style.cssText = `
-    position:fixed;left:${e.clientX}px;top:${e.clientY}px;
-    width:3px;height:3px;border-radius:50%;
-    background:rgba(139,0,0,0.3);pointer-events:none;
-    z-index:9996;transition:opacity 0.4s;
+    position:fixed;left:${e.clientX - size/2}px;top:${e.clientY - size/2}px;
+    width:${size}px;height:${size}px;border-radius:50%;
+    background:rgba(139,0,0,${0.15 + Math.random()*0.2});pointer-events:none;
+    z-index:9996;transition:opacity 0.6s,transform 0.6s;
   `;
   document.body.appendChild(trail);
-  setTimeout(() => { trail.style.opacity = '0'; }, 50);
-  setTimeout(() => { trail.remove(); }, 500);
+  requestAnimationFrame(() => {
+    trail.style.opacity = '0';
+    trail.style.transform = `translate(${(Math.random()-0.5)*8}px,${(Math.random()-0.5)*8}px)`;
+  });
+  setTimeout(() => trail.remove(), 700);
+});
+
+// Text scramble on doc links
+const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789█▓▒░■□▪';
+document.querySelectorAll('.doc-link span:nth-child(2)').forEach(el => {
+  const original = el.textContent;
+  let scrambleTimer;
+  el.parentElement.addEventListener('mouseenter', () => {
+    let iter = 0;
+    clearInterval(scrambleTimer);
+    scrambleTimer = setInterval(() => {
+      el.textContent = original.split('').map((c, i) => {
+        if (i < iter) return original[i];
+        if (c === ' ' || c === '—') return c;
+        return CHARS[Math.floor(Math.random() * CHARS.length)];
+      }).join('');
+      if (iter >= original.length) { clearInterval(scrambleTimer); el.textContent = original; }
+      iter += 2;
+    }, 28);
+  });
+  el.parentElement.addEventListener('mouseleave', () => {
+    clearInterval(scrambleTimer);
+    el.textContent = original;
+  });
 });
 </script>
 
