@@ -9,27 +9,28 @@
 
   // ── CONFIG ──────────────────────────────────────────────────────────────────
   var CFG = {
-    count:        320,
-    speed:        0.55,
-    sep_radius:   28,
-    align_radius: 70,
-    cohese_radius: 90,
+    count:        380,
+    speed:        0.52,
+    sep_radius:   26,
+    align_radius: 68,
+    cohese_radius: 88,
     sep_force:    0.18,
     align_force:  0.06,
     cohese_force: 0.04,
-    attractor:    0.008,
+    attractor:    0.007,
     edge_margin:  80,
     edge_force:   0.12,
-    link_dist:    88,
-    link_max:     3,        // max links per particle
-    link_alpha:   0.12,
-    particle_min: 1.0,
-    particle_max: 2.4,
-    fire_interval: 140,    // ms between neural fires
-    fire_speed:    0.028,  // arc travel speed (0-1 per frame)
-    fire_alpha:    0.55,
-    noise_scale:   0.0008,
-    noise_speed:   0.00018,
+    link_dist:    96,
+    link_max:     4,
+    link_alpha:   0.32,
+    particle_min: 1.2,
+    particle_max: 2.8,
+    particle_alpha: 0.72,
+    glow_blur:    6,
+    fire_interval: 110,
+    fire_speed:    0.030,
+    fire_alpha:    0.90,
+    noise_speed:   0.00016,
   };
 
   // ── STATE ───────────────────────────────────────────────────────────────────
@@ -214,12 +215,15 @@
     }
 
     // ── DRAW PARTICLES ──
+    ctx.shadowBlur = CFG.glow_blur;
+    ctx.shadowColor = 'rgba(' + r + ',' + g + ',' + b + ',0.5)';
     for (var i = 0; i < N; i++) {
       ctx.beginPath();
       ctx.arc(px[i], py[i], sz[i], 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',0.45)';
+      ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + CFG.particle_alpha + ')';
       ctx.fill();
     }
+    ctx.shadowBlur = 0;
 
     // ── DRAW NEURAL ARCS ──
     for (var k = arcs.length - 1; k >= 0; k--) {
@@ -231,11 +235,14 @@
       var ey = py[arc.src] + (py[arc.dst] - py[arc.src]) * arc.t;
       var fade = arc.alpha * Math.sin(arc.t * Math.PI);
 
-      // arc trail
+      // arc trail with glow
+      ctx.shadowBlur = 12;
+      ctx.shadowColor = 'rgba(' + r + ',' + g + ',' + b + ',' + (fade * 0.8) + ')';
       ctx.beginPath();
-      ctx.arc(ex, ey, 2.2, 0, Math.PI * 2);
+      ctx.arc(ex, ey, 3.0, 0, Math.PI * 2);
       ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + fade + ')';
       ctx.fill();
+      ctx.shadowBlur = 0;
 
       // trail line
       ctx.strokeStyle = 'rgba(' + r + ',' + g + ',' + b + ',' + (fade * 0.5) + ')';
