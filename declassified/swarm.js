@@ -9,8 +9,8 @@
 
   // ── CONFIG ──────────────────────────────────────────────────────────────────
   var CFG = {
-    count:        380,
-    speed:        0.52,
+    count:        340,
+    speed:        0.50,
     sep_radius:   26,
     align_radius: 68,
     cohese_radius: 88,
@@ -20,16 +20,16 @@
     attractor:    0.007,
     edge_margin:  80,
     edge_force:   0.12,
-    link_dist:    96,
-    link_max:     4,
-    link_alpha:   0.32,
-    particle_min: 1.2,
-    particle_max: 2.8,
-    particle_alpha: 0.72,
-    glow_blur:    6,
-    fire_interval: 110,
-    fire_speed:    0.030,
-    fire_alpha:    0.90,
+    link_dist:    90,
+    link_max:     3,
+    link_alpha:   0.14,
+    particle_min: 0.8,
+    particle_max: 1.8,
+    particle_alpha: 0.32,
+    glow_blur:    3,
+    fire_interval: 130,
+    fire_speed:    0.028,
+    fire_alpha:    0.55,
     noise_speed:   0.00016,
   };
 
@@ -216,7 +216,7 @@
 
     // ── DRAW PARTICLES ──
     ctx.shadowBlur = CFG.glow_blur;
-    ctx.shadowColor = 'rgba(' + r + ',' + g + ',' + b + ',0.5)';
+    ctx.shadowColor = 'rgba(' + r + ',' + g + ',' + b + ',0.25)';
     for (var i = 0; i < N; i++) {
       ctx.beginPath();
       ctx.arc(px[i], py[i], sz[i], 0, Math.PI * 2);
