@@ -933,6 +933,21 @@ footer {
   opacity: 0.4;
 }
 
+.footer-transparency {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.02);
+}
+
+.footer-transparency p {
+  font-size: 0.42rem;
+  color: var(--text-dim);
+  opacity: 0.25;
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
 /* --- 404 --- */
 .page-404 {
   height: 100vh;
