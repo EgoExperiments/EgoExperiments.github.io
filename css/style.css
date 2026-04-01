@@ -637,6 +637,11 @@ section {
   50% { background-position: 0% 100%; }
 }
 
+a.cred-line {
+  text-decoration: none;
+  color: inherit;
+}
+
 .cred-line:hover {
   background: rgba(0, 112, 204, 0.04);
 }
