@@ -953,6 +953,12 @@ footer {
   text-align: center;
 }
 
+/* ── Homepage section padding fixes ──────────────────────── */
+/* Hero already fills 100vh — divisions needs no top gap */
+#divisions { padding-top: 2rem; }
+/* Hero is a section too — kill its padding so globe fills edge-to-edge */
+#hero { padding: 0 !important; }
+
 /* ── Homepage overlays (division.css elements inside #hero) ── */
 #hero .div-hero-scanlines,
 #hero .div-hero-vignette,
