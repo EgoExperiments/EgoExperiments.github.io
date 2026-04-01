@@ -953,6 +953,60 @@ footer {
   text-align: center;
 }
 
+/* ── Homepage overlays (division.css elements inside #hero) ── */
+#hero .div-hero-scanlines,
+#hero .div-hero-vignette,
+#hero .div-hero-sweep {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+#hero .div-hero-scanlines { z-index: 2; }
+#hero .div-hero-vignette  { z-index: 3; }
+#hero .div-hero-sweep     { z-index: 4; }
+
+#hero .div-hero-corner {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+  z-index: 5;
+}
+#hero .div-hero-corner-tl {
+  top: 80px;
+  left: 2.5rem;
+  border-top: 1px solid rgba(0,112,204,0.25);
+  border-left: 1px solid rgba(0,112,204,0.25);
+}
+#hero .div-hero-corner-br {
+  bottom: 4rem;
+  right: 2.5rem;
+  border-bottom: 1px solid rgba(0,112,204,0.25);
+  border-right: 1px solid rgba(0,112,204,0.25);
+}
+#hero .hero-content { z-index: 6; position: relative; }
+#hero .scroll-indicator { z-index: 6; }
+
+/* Stats bar scan accent */
+.stats-bar {
+  position: relative;
+}
+.stats-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--blue), transparent 60%);
+  opacity: 0.35;
+}
+
+/* Terminal wrap on homepage about section */
+.div-terminal-wrap .cred-terminal {
+  grid-template-columns: 1fr 1fr;
+}
+
 /* --- 404 --- */
 .page-404 {
   height: 100vh;
