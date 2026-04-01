@@ -22,10 +22,10 @@
 
 /* --- CSS Variables --- */
 :root {
-  --blue: #0070cc;
-  --blue-dark: #00439C;
-  --blue-dim: rgba(0, 112, 204, 0.15);
-  --blue-glow: rgba(0, 112, 204, 0.4);
+  --blue: #0a72ba;
+  --blue-dark: #01568d;
+  --blue-dim: rgba(10, 114, 186, 0.15);
+  --blue-glow: rgba(10, 114, 186, 0.4);
   --industrial: #333a41;
   --dark: #0b0b0b;
   --deep-navy: #0b0b0b;
