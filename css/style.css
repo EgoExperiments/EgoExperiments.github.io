@@ -1002,9 +1002,9 @@ footer {
   opacity: 0.35;
 }
 
-/* Terminal wrap on homepage about section */
-.div-terminal-wrap .cred-terminal {
-  grid-template-columns: 1fr 1fr;
+/* Terminal wrap on homepage about section — needs !important, division.css loads after */
+#about .div-terminal-wrap .cred-terminal {
+  grid-template-columns: 1fr 1fr !important;
 }
 
 /* --- 404 --- */
