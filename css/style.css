@@ -968,8 +968,15 @@ footer {
   pointer-events: none;
 }
 #hero .div-hero-scanlines { z-index: 2; }
-#hero .div-hero-vignette  { z-index: 3; }
 #hero .div-hero-sweep     { z-index: 4; }
+
+/* Homepage vignette: centered radial (globe is center), not left-anchored */
+#hero .div-hero-vignette {
+  z-index: 3;
+  background:
+    radial-gradient(ellipse 65% 65% at 50% 50%, transparent 25%, rgba(0,0,0,0.55) 100%),
+    radial-gradient(ellipse 100% 40% at 50% 100%, rgba(0,0,0,0.7) 0%, transparent 70%);
+}
 
 #hero .div-hero-corner {
   position: absolute;
