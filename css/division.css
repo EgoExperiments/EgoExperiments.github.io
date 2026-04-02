@@ -466,4 +466,12 @@ body { background: #060606; overflow-x: hidden; }
   .div-hero-glyph { display: none; }
   .div-classbar-center { display: none; }
   .div-back-link { margin-left: 0; width: 100%; }
+  /* Hide overflow text on mission line */
+  .div-mission-line::after { display: none; }
+  /* Tighten classbar padding */
+  .div-classbar { padding: 0 1rem; }
+  .div-classbar-left, .div-classbar-right { font-size: 0.32rem; }
+  /* CTA stack on mobile */
+  .div-cta-strip { flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .div-cta-btn { width: 100%; justify-content: center; }
 }

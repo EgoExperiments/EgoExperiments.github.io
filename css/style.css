@@ -1019,6 +1019,11 @@ footer {
 #about .div-terminal-wrap .cred-terminal {
   grid-template-columns: 1fr 1fr !important;
 }
+@media (max-width: 768px) {
+  #about .div-terminal-wrap .cred-terminal {
+    grid-template-columns: 1fr !important;
+  }
+}
 
 /* --- 404 --- */
 .page-404 {
