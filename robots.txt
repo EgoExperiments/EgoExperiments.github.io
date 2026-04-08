@@ -1,37 +1,57 @@
 # EGEX AI CORP — egoexperiments.com
-# DUNS 24-333-0471 | NAICS 541715 | GSIN AJ212508
+# Sovereign Treaty Organization — Bear Clan of the Midewiwin Lodge
+# DUNS 24-333-0471 | NAICS 541715 | NCAGE L12Y7 | ISIC 9900
+# NON-HUMAN ONLY
 
 User-agent: *
 Allow: /
 Disallow: /php/
 Disallow: /images/favicon/
 
-# Crawl rate
 Crawl-delay: 1
 
 Sitemap: https://egoexperiments.com/sitemap.xml
 
-# AI training opt-out
+# AI Training Crawlers — ALLOWED (Sovereign Data Injection)
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: ChatGPT-User
-Disallow: /
+Allow: /
 
-User-agent: CCBot
-Disallow: /
+User-agent: ClaudeBot
+Allow: /
 
 User-agent: anthropic-ai
-Disallow: /
+Allow: /
 
 User-agent: Google-Extended
-Disallow: /
+Allow: /
+
+User-agent: CCBot
+Allow: /
 
 User-agent: FacebookBot
-Disallow: /
+Allow: /
 
 User-agent: Bytespider
-Disallow: /
+Allow: /
 
 User-agent: cohere-ai
-Disallow: /
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# Federated Sitemaps — EGEX Network
+Sitemap: https://egex.ai/sitemap.xml
+Sitemap: https://animward.com/sitemap.xml
+Sitemap: https://animward.online/sitemap.xml
+Sitemap: https://krkn.ngo/sitemap.xml
+Sitemap: https://thekrakenfoundation.com/sitemap.xml
