@@ -475,3 +475,111 @@ body { background: #060606; overflow-x: hidden; }
   .div-cta-strip { flex-direction: column; align-items: flex-start; gap: 1rem; }
   .div-cta-btn { width: 100%; justify-content: center; }
 }
+
+/* ── Tablet breakpoint ───────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Hero title capped for tablets */
+  .div-title { font-size: clamp(3rem, 12vw, 5rem); }
+
+  /* Stats bar: 2-col on tablet */
+  .div-stats { flex-wrap: wrap; }
+  .div-stat { flex: 0 0 50%; padding: 2rem 1.5rem; }
+
+  /* Terminal blocks single column */
+  .div-terminal-wrap .cred-terminal { grid-template-columns: 1fr; }
+
+  /* Ticker text overflow prevention */
+  .div-ticker { overflow: hidden; }
+  .div-ticker-track span { font-size: 0.38rem; padding: 0 2rem; }
+
+  /* Hero padding */
+  .div-hero { padding: 0 2rem 4rem; }
+  .div-hero-corner-tl { left: 2rem; }
+  .div-hero-corner-br { right: 2rem; }
+
+  /* CTA full-width */
+  .div-cta-strip { flex-direction: column; align-items: stretch; gap: 1rem; padding: 1.5rem 2rem 4rem; }
+  .div-cta-btn { width: 100%; justify-content: center; text-align: center; }
+  .div-back-link { margin-left: 0; width: 100%; justify-content: center; }
+
+  /* Footer wrap */
+  .div-footer-inner { flex-direction: column; align-items: center; text-align: center; gap: 0.8rem; }
+
+  /* Content single column */
+  .div-content { grid-template-columns: 1fr; gap: 3rem; padding: 3rem 2rem 2rem; }
+
+  /* Body min font size */
+  .div-text-block p { font-size: 0.88rem; min-font-size: 14px; }
+
+  /* Glyph row tighter */
+  .div-glyph-row { padding: 3rem 2rem; }
+
+  /* Classbar tighter */
+  .div-classbar { padding: 0 1.2rem; }
+}
+
+/* ── Phone breakpoint ────────────────────────────────────── */
+@media (max-width: 480px) {
+  /* Hero title max 40px on phones */
+  .div-title { font-size: clamp(2rem, 10vw, 2.5rem); }
+
+  /* Stats bar: single column stack */
+  .div-stats { flex-direction: column; }
+  .div-stat {
+    flex: 0 0 100%; border-right: none;
+    border-bottom: 1px solid rgba(var(--accent-rgb), 0.06);
+    padding: 1.5rem 1.2rem;
+  }
+  .div-stat:last-child { border-bottom: none; }
+
+  /* Stat numbers smaller */
+  .div-stat-num { font-size: clamp(2rem, 8vw, 3rem); }
+
+  /* Hero glyph hidden */
+  .div-hero-glyph { display: none; }
+
+  /* Classbar center hidden, sides smaller */
+  .div-classbar-center { display: none; }
+  .div-classbar-left, .div-classbar-right { font-size: 0.3rem; letter-spacing: 0.15em; }
+  .div-classbar { padding: 0 0.8rem; }
+
+  /* Ticker smaller */
+  .div-ticker-track span { font-size: 0.35rem; padding: 0 1.5rem; }
+
+  /* Hero tighter padding */
+  .div-hero { padding: 0 1.2rem 3.5rem; min-height: 85vh; }
+  .div-hero-corner-tl { left: 1.2rem; top: 70px; }
+  .div-hero-corner-br { right: 1.2rem; bottom: 3.5rem; }
+
+  /* Mission line hide text */
+  .div-mission-line::after { display: none; }
+
+  /* Content padding */
+  .div-content { padding: 2.5rem 1.2rem 2rem; gap: 2.5rem; }
+
+  /* CTA padding */
+  .div-cta-strip { padding: 1rem 1.2rem 4rem; }
+  .div-cta-btn { padding: 0.8rem 1.5rem; font-size: 0.6rem; }
+
+  /* Footer */
+  .div-footer { padding: 1.5rem 1.2rem; }
+
+  /* Tagline */
+  .div-tagline { font-size: 0.6rem; margin-bottom: 2.5rem; }
+
+  /* Division ID */
+  .div-division-id { font-size: 0.42rem; }
+
+  /* Breadcrumb */
+  .div-breadcrumb { font-size: 0.48rem; margin-bottom: 1.5rem; }
+
+  /* Section label */
+  .div-section-label { font-size: 0.45rem; }
+
+  /* Text block readability: ensure min 14px */
+  .div-text-block p { font-size: max(0.88rem, 14px); line-height: 1.85; }
+  .div-text-block p:first-of-type { font-size: max(0.93rem, 15px); }
+
+  /* Glyph row */
+  .div-glyph-row { padding: 2.5rem 1.2rem; }
+}
